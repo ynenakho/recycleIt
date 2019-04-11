@@ -1,5 +1,5 @@
 train (t-9wdugxvycw61sgpb74owng5ge) {
-  utterance ([g:IsRecyclable] is it recyclable)
-  plan (Y2BkUChITUxOTUktK9YrSk2uTM5JzSzR8ywOArMTk3JSGUCAEUQAAA==)
-  last-modified (1554986933167)
+  utterance ([g:Response] is it recyclable)
+  plan (Y2BkkClITUxOTUktK9YrSk2uTM5JzSzRC0otLsjPK05lAAFGEAEA)
+  last-modified (1555024531391)
 }

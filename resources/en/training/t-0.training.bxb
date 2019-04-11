@@ -1,5 +1,5 @@
 train (t-0bogljyt4edzfd5ycrqxpz2le) {
-  utterance ([g:IsRecyclable] recycle this?)
-  plan (Y2BkUChITUxOTUktK9YrSk2uTM5JzSzR8ywOArMTk3JSGUCAEUQAAA==)
-  last-modified (1555019211212)
+  utterance ([g:Response] recycle this?)
+  plan (Y2BkkClITUxOTUktK9YrSk2uTM5JzSzRC0otLsjPK05lAAFGEAEA)
+  last-modified (1555024537768)
 }
