@@ -1,0 +1,15 @@
+action (RecognitionResponse) {
+  type (Constructor)
+  description (Action to get image and material)
+  collect {
+    input (image) {
+      type (Image)
+      min (Required) max (One)
+    }
+    input (material) {
+      type (Material)
+      min (Required) max (Many)
+    }
+  }
+  output (RecognitionResponseConcept)
+}

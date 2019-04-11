@@ -1,0 +1,11 @@
+structure (Material) {
+  description (Result of API call for image recognition)
+  property (description) {
+    type (DescriptionConcept)
+    min (Required)
+  }
+  property (score) {
+    type (ScoreConcept)
+    min (Required)
+  }
+}

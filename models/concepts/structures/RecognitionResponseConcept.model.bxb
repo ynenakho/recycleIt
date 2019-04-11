@@ -1,0 +1,11 @@
+structure (RecognitionResponseConcept) {
+  description (Response from API)
+  property (image) {
+    type (Image)
+    min (Required) max (One)
+  }
+  property (material) {
+    type (Material)
+    min (Required) max (Many)
+  }
+}

@@ -1,0 +1,12 @@
+endpoints {
+  action-endpoints {
+    action-endpoint (GetMaterialFromImage) {
+      accepted-inputs (image)
+      local-endpoint ("GetMaterialFromImage.js")
+    }
+    action-endpoint (RecognitionResponse) {
+      accepted-inputs (image, material)
+      local-endpoint ("GetRecognitionResponce.js")
+    }
+  }
+}
