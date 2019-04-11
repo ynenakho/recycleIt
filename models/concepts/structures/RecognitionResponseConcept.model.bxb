@@ -1,5 +1,5 @@
 structure (RecognitionResponseConcept) {
-  description (Response from API)
+  description (Response from Recognition API)
   property (image) {
     type (Image)
     min (Required) max (One)

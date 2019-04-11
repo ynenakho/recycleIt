@@ -2,14 +2,25 @@ action (RecognitionResponse) {
   type (Constructor)
   description (Action to get image and material)
   collect {
+
+    input (material) {
+      type (Material)
+      min (Required) max (Many)
+      default-init {
+         intent {
+          goal: Material
+          subplan {
+            goal: SelectImage
+          }
+        }
+      }
+    }
+    
     input (image) {
       type (Image)
       min (Required) max (One)
     }
-    input (material) {
-      type (Material)
-      min (Required) max (Many)
-    }
+    
   }
   output (RecognitionResponseConcept)
 }
