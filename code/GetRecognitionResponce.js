@@ -1,4 +1,3 @@
-var mockData  = require("./mockData.js");
 var console = require('console')
 var config = require('config')
 

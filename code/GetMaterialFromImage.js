@@ -1,11 +1,28 @@
-var mockData  = require("./mockData.js");
-var console = require('console')
-var config = require('config')
+var console = require('console');
+var http = require('http');
+var config = require('config');
+var value = config.get('gcpApiKey');
 
-module.exports.function = function GetMaterialFromImage (image) {
-  var answer = [];
-  for (let i =0; i < mockData.length; i++) {
-     answer.push({description: mockData[i].description, score: mockData[i].score});
-  }
-  return answer;
+module.exports.function = function GetMaterialFromImage(image) {
+  if (!value) value = "";
+  var params = {
+    "requests": [
+      {
+        "image": {
+          "source": {
+            "imageUri": image.url
+          }
+        },
+        "features": [
+          {
+            "type": "LABEL_DETECTION"
+          }
+        ]
+      }
+    ]
+  };
+  var response = http.postUrl(config.get('remote.url') + value, params,{ passAsJson: true });
+  var data = JSON.parse(response).responses[0].labelAnnotations.map(resp => ({description: resp.description, score: resp.score}));
+  console.debug("RESP",data);
+  return data;
 }
