@@ -4,7 +4,7 @@ action (SelectImage) {
     input (image) {
       type (Image)
       min (Required) max (One)
-      
+  
       default-init {
         intent {
           goal: Image
@@ -20,6 +20,10 @@ action (SelectImage) {
         }
       }
     }
+  }
+
+  features {
+    form-prompt
   }
   output (Image) {
     evaluate {
