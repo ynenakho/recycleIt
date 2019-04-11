@@ -1,0 +1,13 @@
+structure (Response) {
+  description (response output)
+  property (text) {
+    type (viv.core.Text)
+    min (Required) max (One)
+    // visibility (Private)
+  }
+  property (image) {
+    type (Image)
+    min (Required) max (One)
+    // visibility (Private)
+  }
+}

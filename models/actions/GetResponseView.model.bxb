@@ -1,0 +1,18 @@
+action (GetResponseView) {
+  type (Constructor)
+  description (choose the view for response)
+  collect {
+     
+    input (isRecyclable) {
+      type (IsRecyclable)
+      min (Required) max (One)
+      default-init {
+         intent {
+          goal: AskIfRecyclable
+        }
+      }
+     
+    }
+  }
+  output (Response)
+}

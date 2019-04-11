@@ -12,5 +12,9 @@ endpoints {
       accepted-inputs (recognitionResponse)
       local-endpoint ("AskIfRecyclable.js")
     }
+    action-endpoint (GetResponseView){
+      accepted-inputs (isRecyclable)
+      local-endpoint ("GetResponseView.js")
+    }
   }
 }

@@ -17,6 +17,15 @@ action (SelectImage) {
           value: Image {
             url: viv.core.Url("https://4.imimg.com/data4/EU/YB/MY-6282801/normal-plastic-bottle-500x500.jpg")
           }
+           value: Image {
+            url: viv.core.Url("https://www.lg.com/au/images/it-monitors/md05608207/gallery/20_24M38H-medium01.jpg")
+          }
+          value: Image {
+            url: viv.core.Url("https://media1.popsugar-assets.com/files/thumbor/D0OYajmdcatHUC1-b4Axbf-uNxo/fit-in/2048xorig/filters:format_auto-!!-:strip_icc-!!-/2017/02/08/859/n/1922195/a7a42800589b73af54eda9.99423697_edit_img_image_43136859_1486581354/i/KFC-Fried-Chicken-Pizza.jpg")
+          }
+          value: Image {
+            url: viv.core.Url("https://www.johnniewalkerrv.com/wp-content/uploads/2018/06/batteries.jpg")
+          }
         }
       }
     }

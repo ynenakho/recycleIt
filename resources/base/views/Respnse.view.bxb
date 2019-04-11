@@ -1,0 +1,11 @@
+result-view {
+  match: Response (this)
+  
+  message {
+      template("#{raw(this.text)}")
+  }
+  
+  render {
+    image-list-of (this.image)
+  }
+}
