@@ -4,8 +4,10 @@ var config = require('config')
 module.exports.function = function askIfRecyclable (recognitionResponse) {
   var {material} = recognitionResponse;
   console.debug(material);
+  // Logic to understand if something recyclable? 
+  // Best way is to send an API call with our materials to something that can actually tell if this is recyclable?
   
-  
+  // Mock for now? 
   // if we can find any of these in materials then we can say it is recyclable
   const recyclables = ['carton', 'paper', 'can', 'glass', 'plastic'];
   
@@ -21,6 +23,6 @@ module.exports.function = function askIfRecyclable (recognitionResponse) {
   }
   
   
-  
+  // Otherwise we say it is not recyclable
   return false;
 }

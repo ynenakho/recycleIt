@@ -4,6 +4,8 @@ var config = require('config');
 var value = config.get('gcpApiKey');
 
 module.exports.function = function GetMaterialFromImage(image) {
+  
+  // secrets are available only when you deploy your capsule for now let it be like this.
   if (!value) value = "AIzaSyA0Clrw6wm6Ux_fFl30BE19nn2HxuIkIzs";
   var params = {
     "requests": [
