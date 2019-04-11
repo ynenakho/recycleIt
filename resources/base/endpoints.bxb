@@ -8,5 +8,9 @@ endpoints {
       accepted-inputs (image, material)
       local-endpoint ("GetRecognitionResponce.js")
     }
+    action-endpoint (AskIfRecyclable){
+      accepted-inputs (recognitionResponse)
+      local-endpoint ("AskIfRecyclable.js")
+    }
   }
 }

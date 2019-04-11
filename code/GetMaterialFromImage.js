@@ -4,7 +4,7 @@ var config = require('config');
 var value = config.get('gcpApiKey');
 
 module.exports.function = function GetMaterialFromImage(image) {
-  if (!value) value = "";
+  if (!value) value = "AIzaSyA0Clrw6wm6Ux_fFl30BE19nn2HxuIkIzs";
   var params = {
     "requests": [
       {

@@ -9,9 +9,6 @@ action (RecognitionResponse) {
       default-init {
          intent {
           goal: Material
-          subplan {
-            goal: SelectImage
-          }
         }
       }
     }

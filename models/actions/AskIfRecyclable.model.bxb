@@ -1,0 +1,16 @@
+action (AskIfRecyclable) {
+  type(Fetch)
+  description (ask if this is a recyclable?)
+  collect {
+    input (recognitionResponse) {
+      type (RecognitionResponseConcept)
+      min (Required) max (One)
+      default-init {
+         intent {
+          goal: Material
+        }
+      }
+    }
+  }
+  output (IsRecyclable)
+}

@@ -1,0 +1,3 @@
+boolean (IsRecyclable) {
+  description (is it recyclable?)
+}
