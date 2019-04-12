@@ -9,7 +9,7 @@ input-view {
 
   render {
     image-picker (this) {
-      size (Small)
+      size (Medium)
     }
   }
 }

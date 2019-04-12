@@ -9,17 +9,33 @@ result-view {
     image-list-of (this.image)
   }
   
-  followup {
-    prompt {
-      dialog (Would you like to check on other item?)
+conversation-drivers
+{
+   conversation-driver {
+      template (Yes)
+    }  
+    conversation-driver {
+      template (No)
+    }
+    
+}
+  
+ followup {
+  prompt {
+     dialog ( Would you like to check on other item?)
+      
       on-confirm {
           intent {
             goal: Response
           }
       }
-      on-deny {
-        message (Thank you for making inpact to make our World a Better Place!)
-      }
-    }
+      on-deny {     
+        intent{
+          goal:Thank 
+        }
+     
+     }
+      
+  }
   }
 }

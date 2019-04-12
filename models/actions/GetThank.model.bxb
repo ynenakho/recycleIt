@@ -1,0 +1,8 @@
+action (GetThank) {
+  description (thank you)
+  type(Constructor)
+            // imageurl: viv.core.Url("http://www.wasterecycling.org.uk/home_recycling/images/recycling_metal.jpg")
+      
+  output (Thank){         
+  }
+}

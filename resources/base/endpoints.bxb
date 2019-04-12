@@ -16,5 +16,8 @@ endpoints {
       accepted-inputs (isRecyclable)
       local-endpoint ("GetResponseView.js")
     }
+    action-endpoint (GetThank) {
+      local-endpoint ("getThank.js")
+    }
   }
 }

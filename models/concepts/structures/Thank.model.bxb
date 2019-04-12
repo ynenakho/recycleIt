@@ -1,0 +1,16 @@
+structure (Thank) {
+  description (last  output)
+
+  
+  property (text) {
+    type (viv.core.Text)
+    min (Required) max (One)
+  }
+  
+  // property (image) {
+  //   type (Image)
+  //   min (Required) max (One)
+  //   // visibility (Private)
+  // }
+
+}
