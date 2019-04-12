@@ -17,7 +17,7 @@ endpoints {
       local-endpoint ("GetResponseView.js")
     }
     action-endpoint (GetThank) {
-      local-endpoint ("getThank.js")
+      local-endpoint ("GetThank.js")
     }
   }
 }

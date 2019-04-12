@@ -2,7 +2,6 @@ action (RecognitionResponse) {
   type (Constructor)
   description (Action to get image and material)
   collect {
-
     input (material) {
       type (Material)
       min (Required) max (Many)
@@ -17,7 +16,6 @@ action (RecognitionResponse) {
       type (Image)
       min (Required) max (One)
     }
-    
   }
   output (RecognitionResponseConcept)
 }

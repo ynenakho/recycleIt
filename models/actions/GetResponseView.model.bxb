@@ -2,7 +2,6 @@ action (GetResponseView) {
   type (Constructor)
   description (choose the view for response)
   collect {
-     
     input (isRecyclable) {
       type (IsRecyclable)
       min (Required) max (One)
@@ -11,7 +10,6 @@ action (GetResponseView) {
           goal: AskIfRecyclable
         }
       }
-     
     }
   }
   output (Response)

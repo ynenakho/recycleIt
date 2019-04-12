@@ -1,11 +1,11 @@
 result-view {
-  match:Thank()
+  match: Thank()
  
   message {
-     template (Thank you for making inpact to make our World a Better Place!) 
-  }
- render {
-  nothing
+    template (Thank you for making inpact to make our World a Better Place!) 
   }
   
+  render {
+    nothing
+  }
 }

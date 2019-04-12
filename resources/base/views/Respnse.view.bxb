@@ -1,41 +1,37 @@
 result-view {
   match: Response (this)
-  
+
   message {
-      template("#{raw(this.text)}")
+    template("#{raw(this.text)}")
   }
   
   render {
     image-list-of (this.image)
   }
-  
-conversation-drivers
-{
-   conversation-driver {
+
+  conversation-drivers {
+    conversation-driver {
       template (Yes)
     }  
     conversation-driver {
       template (No)
-    }
-    
-}
+    }  
+  }
   
- followup {
-  prompt {
-     dialog ( Would you like to check on other item?)
+  followup {
+    prompt {
+      dialog ( Would you like to check on other item?)
       
       on-confirm {
-          intent {
-            goal: Response
-          }
+        intent {
+          goal: Response
+        }
       }
       on-deny {     
-        intent{
+        intent {
           goal:Thank 
         }
-     
-     }
-      
-  }
+      }
+    }
   }
 }
