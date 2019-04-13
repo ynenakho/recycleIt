@@ -1,21 +1,21 @@
-action (RecognitionResponse) {
-  type (Constructor)
-  description (Action to get image and material)
-  collect {
-    input (material) {
-      type (Material)
-      min (Required) max (Many)
-      default-init {
-         intent {
-          goal: Material
-        }
-      }
-    }
-    
-    input (image) {
-      type (Image)
-      min (Optional) max (One)
-    }
-  }
-  output (RecognitionResponseConcept)
-}
+// action (RecognitionResponse) {
+//   type (Constructor)
+//   description (Action to get image and material)
+//   collect {
+//     input (material) {
+//       type (Material)
+//       min (Required) max (Many)
+//       default-init {
+//          intent {
+//           goal: CreateMaterial
+//         }
+//       }
+//     }
+//     
+//     input (image) {
+//       type (Image)
+//       min (Optional) max (One)
+//     }
+//   }
+//   output (RecognitionResponseConcept)
+// }

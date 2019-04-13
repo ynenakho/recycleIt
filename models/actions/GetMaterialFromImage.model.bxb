@@ -1,16 +1,16 @@
-action (GetMaterialFromImage) {
-  type(Fetch)
-  description (Grab image data from API service)
-  collect {
-    input (image) {
-      type (Image)
-      min (Required) max (One)
-       default-init {
-         intent {
-          goal: SelectImage
-        }
-      }
-    }
-  }
-  output (Material)
-}
+// action (GetMaterialFromImage) {
+//   type(Fetch)
+//   description (Grab image data from API service)
+//   collect {
+//     input (image) {
+//       type (Image)
+//       min (Required) max (One)
+//        default-init {
+//          intent {
+//           goal: SelectImage
+//         }
+//       }
+//     }
+//   }
+//   output (Material)
+// }

@@ -1,5 +1,5 @@
-train (t-1jnf2m5d5y5cwgk5zmds3pzvv) {
-  utterance ("[g:Response] can i recycle (metal)[v:DescriptionConcept] (can)[v:DescriptionConcept]")
+train (t-nhuu64i0d6mp1dhpb31fsc6xt) {
+  utterance ("[g:Response] (plastic)[v:DescriptionConcept] (bottles)[v:DescriptionConcept] should be recycled?")
   plan (rY7LCgIxDEWvr1HBT3AhCi7nH2QEmYWbWbiv9QrFoS1NUfx7i+KgUHcSArk5hxBMMfdUmidepQzUd93SxLKheGeFWOXojvEtHAxvWOSkWprnrI7tjzMbudTnDyn7yV5FBqNaLHO0Cky8c9Y5Z0vRwfhonK2c1fTx794EPfQxwBAjFBinjK9NkRK6nqVCYniZDw==)
-  last-modified (1555123271244)
+  last-modified (1555124451387)
 }

@@ -1,15 +1,15 @@
 endpoints {
   action-endpoints {
-    action-endpoint (GetMaterialFromImage) {
-      accepted-inputs (image)
-      local-endpoint ("GetMaterialFromImage.js")
-    }
-    action-endpoint (RecognitionResponse) {
-      accepted-inputs (image, material)
-      local-endpoint ("GetRecognitionResponce.js")
-    }
+    // action-endpoint (GetMaterialFromImage) {
+    //   accepted-inputs (image)
+    //   local-endpoint ("GetMaterialFromImage.js")
+    // }
+    // action-endpoint (RecognitionResponse) {
+    //   accepted-inputs (image, material)
+    //   local-endpoint ("GetRecognitionResponce.js")
+    // }
     action-endpoint (AskIfRecyclable){
-      accepted-inputs (recognitionResponse)
+      accepted-inputs (material)
       local-endpoint ("AskIfRecyclable.js")
     }
     action-endpoint (GetResponseView){

@@ -1,3 +1,3 @@
-text (DescriptionConcept) {
+name (DescriptionConcept) {
   description (Description from API)
 }
