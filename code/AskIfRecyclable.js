@@ -8,7 +8,10 @@ module.exports.function = function askIfRecyclable (material) {
   
   // Mock for now? 
   // if we can find any of these in materials then we can say it is recyclable
-  const recyclables = ['carton', 'paper', 'can', 'glass', 'plastic', 'metal'];
+  const recyclables = ['carton', 'paper', 'can', 'glass' ,'conditioner ','napkins', 'metal','steel','aluminum', 'cereal','snack' ,'cardboard', 'tin', 'glass','jar' , 'bottle'];
+
+  
+
   
   for (let i =0; i < material.length; i++) {
     var current =(material[i].description).toUpperCase();
