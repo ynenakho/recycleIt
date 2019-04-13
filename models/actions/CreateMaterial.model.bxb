@@ -1,0 +1,15 @@
+action (CreateMaterial) {
+  description (Constructor to material)
+  type(Constructor)
+  collect {
+    input (description) {
+      type (DescriptionConcept)
+      min (Required) max (Many)
+    }
+    input (image) {
+      type (Image)
+      min (Optional) max (One)
+    }
+  }
+  output (Material)
+}

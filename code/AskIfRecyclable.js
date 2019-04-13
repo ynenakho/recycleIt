@@ -15,6 +15,7 @@ module.exports.function = function askIfRecyclable (recognitionResponse) {
     var current =(material[i].description).toUpperCase();
     var currentScore = material[i].score;
     var words = current.split(' ');
+    if (!currentScore) currentScore = 1;
     for (let j = 0; j < words.length; j++) {
       var word = words[j];
       if (recyclables.find(type => word === type.toUpperCase()) && currentScore > 0.5)

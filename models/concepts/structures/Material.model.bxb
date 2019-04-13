@@ -6,6 +6,6 @@ structure (Material) {
   }
   property (score) {
     type (ScoreConcept)
-    min (Required)
+    min (Optional)
   }
 }

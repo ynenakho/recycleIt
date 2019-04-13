@@ -26,6 +26,9 @@ action (SelectImage) {
           value: Image {
             url: viv.core.Url("https://www.johnniewalkerrv.com/wp-content/uploads/2018/06/batteries.jpg")
           }
+          value: Image {
+            url: viv.core.Url("images/test.jpg")
+          }
         }
       }
     }

@@ -2,7 +2,7 @@ structure (RecognitionResponseConcept) {
   description (Response from Recognition API)
   property (image) {
     type (Image)
-    min (Required) max (One)
+    min (Optional) max (One)
   }
   property (material) {
     type (Material)

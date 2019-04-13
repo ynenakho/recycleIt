@@ -19,5 +19,9 @@ endpoints {
     action-endpoint (GetThank) {
       local-endpoint ("GetThank.js")
     }
+    action-endpoint (CreateMaterial) {
+      accepted-inputs (description, image)
+      local-endpoint ("CreateMaterial.js")
+    }
   }
 }

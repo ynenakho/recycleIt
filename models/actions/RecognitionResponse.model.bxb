@@ -14,7 +14,7 @@ action (RecognitionResponse) {
     
     input (image) {
       type (Image)
-      min (Required) max (One)
+      min (Optional) max (One)
     }
   }
   output (RecognitionResponseConcept)

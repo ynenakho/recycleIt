@@ -22,7 +22,8 @@ module.exports.function = function GetMaterialFromImage(image) {
     ]
   };
   var response = http.postUrl(config.get('remote.url') + value, params,{ passAsJson: true });
+  console.debug("RESPONSE",response);
   var data = JSON.parse(response).responses[0].labelAnnotations.map(resp => ({description: resp.description, score: resp.score}));
-  console.debug("RESP",data);
+  console.debug("DATA",data);
   return data;
 }
