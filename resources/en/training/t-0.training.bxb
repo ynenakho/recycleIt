@@ -3,3 +3,8 @@ train (t-0bogljyt4edzfd5ycrqxpz2le) {
   plan (Y2BkkClITUxOTUktK9YrSk2uTM5JzSzRC0otLsjPK05lAAFGEAEA)
   last-modified (1555120449784)
 }
+train (t-0ec6h8uixn9ol9yjrxshx1d0f) {
+  utterance ("[g:Response] tell me if i can recycle (pizza box)[v:DescriptionConcept]")
+  plan (dY69CgIxEITn/H0JC1GwvHeQO5ArbK6wj3GEYEhCNii+vfFEuSIWCzP7fSyLJVaBSvPCu9SR+qktTap7SvBOiG2JHpi+wsnwgXVJ6qQfsjrbP2f2cuuuI6n4yVElRqMsNiXaRGb+c3Ylp6XoaEIy3jXeaYaEBSpMMMUM85wxatXQPoO8xZu/AA==)
+  last-modified (1555136869242)
+}

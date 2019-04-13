@@ -1,5 +1,15 @@
+train (t-nd0joelv4tmrp49xmtxhavb4y) {
+  utterance ("[g:Response] Can i recycle (rubber)[v:DescriptionConcept] (ball)[v:DescriptionConcept]?")
+  plan (rY7LCgIxDEWvr1HBT3AhCi7nH2QEmYWbWbiv9QrFoS1NUfx7i+KgUHcSArk5hxBMMfdUmidepQzUd93SxLKheGeFWOXojvEtHAxvWOSkWprnrI7tjzMbudTnDyn7yV5FBqNaLHO0Cky8c9Y5Z0vRwfhonK2c1fTx794EPfQxwBAjFBinjK9NkRK6nqVCYniZDw==)
+  last-modified (1555137742306)
+}
 train (t-nhuu64i0d6mp1dhpb31fsc6xt) {
   utterance ("[g:Response] (plastic)[v:DescriptionConcept] (bottles)[v:DescriptionConcept] should be recycled?")
   plan (rY7LCgIxDEWvr1HBT3AhCi7nH2QEmYWbWbiv9QrFoS1NUfx7i+KgUHcSArk5hxBMMfdUmidepQzUd93SxLKheGeFWOXojvEtHAxvWOSkWprnrI7tjzMbudTnDyn7yV5FBqNaLHO0Cky8c9Y5Z0vRwfhonK2c1fTx794EPfQxwBAjFBinjK9NkRK6nqVCYniZDw==)
   last-modified (1555124451387)
+}
+train (t-nzn5h5rmz4k0g5d0dtczw1pt1) {
+  utterance ("[g:Response] Do you think if  I can recycle my (watch)[v:DescriptionConcept]?")
+  plan (dY69CgIxEITn/H0JC1GwvHeQO5ArbK6wj3GEYEhCNii+vfFEuSIWCzP7fSyLJVaBSvPCu9SR+qktTap7SvBOiG2JHpi+wsnwgXVJ6qQfsjrbP2f2cuuuI6n4yVElRqMsNiXaRGb+c3Ylp6XoaEIy3jXeaYaEBSpMMMUM85wxatXQPoO8xZu/AA==)
+  last-modified (1555136994627)
 }

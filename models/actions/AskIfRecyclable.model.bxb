@@ -12,5 +12,9 @@ action (AskIfRecyclable) {
       }
     }
   }
-  output (IsRecyclable)
+  output (IsRecyclable) {
+    on-empty {
+      drop-contextual-inputs
+    }
+  }
 }

@@ -1,0 +1,5 @@
+train (t-c267ll84cbg5e6xcd7mzrusp1) {
+  utterance ("[g:Response] is (kitchen)[v:DescriptionConcept] (oil)[v:DescriptionConcept] recyclable?")
+  plan (rY7LCgIxDEWvr1HBT3AhCi7nH2QEmYWbWbiv9QrFoS1NUfx7i+KgUHcSArk5hxBMMfdUmidepQzUd93SxLKheGeFWOXojvEtHAxvWOSkWprnrI7tjzMbudTnDyn7yV5FBqNaLHO0Cky8c9Y5Z0vRwfhonK2c1fTx794EPfQxwBAjFBinjK9NkRK6nqVCYniZDw==)
+  last-modified (1555137819778)
+}

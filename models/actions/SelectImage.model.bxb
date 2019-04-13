@@ -41,5 +41,8 @@ action (SelectImage) {
     evaluate {
       $expr (image)
     }
+    on-empty {
+      drop-contextual-inputs
+    }
   }
 }

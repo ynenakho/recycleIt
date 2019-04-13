@@ -12,5 +12,9 @@ action (GetResponseView) {
       }
     }
   }
-  output (Response)
+  output (Response) {
+    on-empty {
+      drop-contextual-inputs
+    }
+  }
 }
