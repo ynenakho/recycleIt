@@ -1,0 +1,10 @@
+train (t-ekraehrwq5gwcg7kalqo6qyd5) {
+  utterance ("[g:Response] can i recycle (toy helicopter)[v:DescriptionConcept]?")
+  plan (dY69CgIxEITn/H0JC1GwvHeQO5ArbK6wj3GEYEhCNii+vfFEuSIWCzP7fSyLJVaBSvPCu9SR+qktTap7SvBOiG2JHpi+wsnwgXVJ6qQfsjrbP2f2cuuuI6n4yVElRqMsNiXaRGb+c3Ylp6XoaEIy3jXeaYaEBSpMMMUM85wxatXQPoO8xZu/AA==)
+  last-modified (1555136669036)
+}
+train (t-epwhx0hp7z47dzml8pfelk6sw) {
+  utterance ("[g:Response:continue] how about (metal scraps)[v:DescriptionConcept]?")
+  plan (dY69CgIxEITn/H0JC1GwvHeQO5ArbK6wj3GEYEhCNii+vfFEuSIWCzP7fSyLJVaBSvPCu9SR+qktTap7SvBOiG2JHpi+wsnwgXVJ6qQfsjrbP2f2cuuuI6n4yVElRqMsNiXaRGb+c3Ylp6XoaEIy3jXeaYaEBSpMMMUM85wxatXQPoO8xZu/AA==)
+  last-modified (1555136408387)
+}
