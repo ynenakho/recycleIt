@@ -27,6 +27,7 @@ result-view {
           goal: Response
         }
       }
+      
       on-deny {     
         intent {
           goal:Thank 
