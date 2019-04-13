@@ -1,3 +1,8 @@
+train (t-lc6fjas7hf84h4qtitopdct7e) {
+  utterance ("[g:Response] can i recycle (wine bottle)[v:DescriptionConcept] ")
+  plan (dY69CgIxEITn/H0JC1GwvHeQO5ArbK6wj3GEYEhCNii+vfFEuSIWCzP7fSyLJVaBSvPCu9SR+qktTap7SvBOiG2JHpi+wsnwgXVJ6qQfsjrbP2f2cuuuI6n4yVElRqMsNiXaRGb+c3Ylp6XoaEIy3jXeaYaEBSpMMMUM85wxatXQPoO8xZu/AA==)
+  last-modified (1555140828276)
+}
 train (t-ljpsizzn7sqi48rngxdk4o9an) {
   utterance ("[g:Response] can i utilize (tin)[v:DescriptionConcept] (can)[v:DescriptionConcept]?")
   plan (rY7LCgIxDEWvr1HBT3AhCi7nH2QEmYWbWbiv9QrFoS1NUfx7i+KgUHcSArk5hxBMMfdUmidepQzUd93SxLKheGeFWOXojvEtHAxvWOSkWprnrI7tjzMbudTnDyn7yV5FBqNaLHO0Cky8c9Y5Z0vRwfhonK2c1fTx794EPfQxwBAjFBinjK9NkRK6nqVCYniZDw==)

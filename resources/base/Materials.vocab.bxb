@@ -3,7 +3,7 @@ vocab (peacedevs.recycleit.DescriptionConcept) {
   "gavno"
   "can"
   "bottle"
-  "plastic"
-  "carton"
-  "paper"
+  "plastic" "carton" "paper" "glass" "conditioner" "napkins"
+  "metal" "steel" "aluminum" "cereal" "snack" "cardboard" "tin" "glass" "jar" "wine bottle" "beer botlle" "liquor bottle" "beer "
+  
 }
