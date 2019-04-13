@@ -1,3 +1,8 @@
+train (t-n2k8kl73wb277gmkxpqb44wy7) {
+  utterance ([g:Response] can i recycle it?)
+  plan (Y2BkkClITUxOTUktK9YrSk2uTM5JzSzRC0otLsjPK05lAAFGEAEA)
+  last-modified (1555141668726)
+}
 train (t-nd0joelv4tmrp49xmtxhavb4y) {
   utterance ("[g:Response] Can i recycle (rubber)[v:DescriptionConcept] (ball)[v:DescriptionConcept]?")
   plan (rY7LCgIxDEWvr1HBT3AhCi7nH2QEmYWbWbiv9QrFoS1NUfx7i+KgUHcSArk5hxBMMfdUmidepQzUd93SxLKheGeFWOXojvEtHAxvWOSkWprnrI7tjzMbudTnDyn7yV5FBqNaLHO0Cky8c9Y5Z0vRwfhonK2c1fTx794EPfQxwBAjFBinjK9NkRK6nqVCYniZDw==)
