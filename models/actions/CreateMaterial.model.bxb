@@ -4,12 +4,22 @@ action (CreateMaterial) {
   collect {
     input (description) {
       type (DescriptionConcept)
-      min (Required) max (Many)
+      min (Optional) max (Many)
+      
     }
-    input (image) {
+    computed-input (image) {
       type (Image)
       min (Optional) max (One)
+      compute {
+        if (!exists(description)) {
+          intent {
+            goal: SelectImage
+          }
+        }
+      }
     }
+    
+    
   }
   output (Material)
 }

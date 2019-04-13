@@ -1,0 +1,9 @@
+vocab (peacedevs.recycleit.DescriptionConcept) {
+  "metal"
+  "gavno"
+  "can"
+  "bottle"
+  "plastic"
+  "carton"
+  "paper"
+}
