@@ -6,22 +6,47 @@ var value = secret.get('gcpApiKey');
 
 
 function GetMaterialFromImage(image) {
-  var params = {
-    "requests": [
-      {
-        "image": {
-          "source": {
-            "imageUri": image.url
-          }
-        },
-        "features": [
-          {
-            "type": "LABEL_DETECTION"
-          }
-        ]
-      }
-    ]
-  };
+  
+  var params;
+ 
+   console.log('image = ', image);
+  
+  if (image.url) {
+    params = {
+      "requests": [
+        {
+          "image": {
+            "source": {
+              "imageUri": image.url
+            }
+          },
+          "features": [
+            {
+              "type": "LABEL_DETECTION"
+            }
+          ]
+        }
+      ]
+    };
+  } else {
+    params = {
+      "requests": [
+        {
+          "image":
+            {
+              "content": image.imageData
+            },
+          "features": [
+              {
+                "type": "LABEL_DETECTION"
+              }
+            ]
+        }
+      ]
+    };
+  }
+ 
+  
   
   var response = http.postUrl(config.get('remote.url') + value, params,{ passAsJson: true });
   console.debug("RESPONSE",response);
