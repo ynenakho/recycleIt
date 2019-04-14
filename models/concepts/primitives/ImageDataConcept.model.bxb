@@ -1,0 +1,3 @@
+text (ImageDataConcept) {
+  description (base64 encoded image data)
+}
