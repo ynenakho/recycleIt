@@ -1,5 +1,5 @@
 train (t-jbzqcmmxqppk76cdzjfazeo4v) {
-  utterance ([g:Response] can you check from my gallery)
-  plan (Y2BkkClITUxOTUktK9YrSk2uTM5JzSzRC0otLsjPK05lAAFGEAEA)
-  last-modified (1555274703367)
+  utterance ("[g:Response] can you check from my (gallery)[v:Option]")
+  plan (Y2BlkClITUxOTUktK9YrSk2uTM5JzSzRC0otLsjPK05lUMYm61ic7ZkWBOYmJuWkYjfCN7EktSgzMYdBCZusc1EqUB6uRgqbGv+Cksz8PAYWBkYGJgZmIM0AZTGCWSDABMRAcQA=)
+  last-modified (1555307934112)
 }

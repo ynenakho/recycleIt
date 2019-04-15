@@ -1,10 +1,5 @@
 train (t-z3qs53qfvow66etqkdj8rz7bb) {
   utterance ("[g:Response] can you choose (from pictures)[v:Option]")
   plan (Y2BlkClITUxOTUktK9YrSk2uTM5JzSzRC0otLsjPK05lUMYm61ic7ZkWBOYmJuWkYjfCN7EktSgzMYdBCZusc1EqUB6uRgqbGv+Cksz8PAYWBkYGJgZmIM0AZTGCWSDABMRAcQA=)
-  last-modified (1555316578972)
-}
-train (t-znnrwedzcx22po66bm8fhkz99) {
-  utterance ("[g:Response] What do you think, should I recycle my (brother)[v:DescriptionConcept]?")
-  plan (dY69CgIxEITn/H0JC1GwvHeQO5ArbK6wj3GEYEhCNii+vfFEuSIWCzP7fSyLJVaBSvPCu9SR+qktTap7SvBOiG2JHpi+wsnwgXVJ6qQfsjrbP2f2cuuuI6n4yVElRqMsNiXaRGb+c3Ylp6XoaEIy3jXeaYaEBSpMMMUM85wxatXQPoO8xZu/AA==)
-  last-modified (1555137051861)
+  last-modified (1555316374270)
 }

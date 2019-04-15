@@ -4,4 +4,7 @@ structure (Thank) {
     type (viv.core.Text)
     min (Required) max (One)
   }
+  features{
+    transient
+  }
 }
