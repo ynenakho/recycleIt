@@ -1,0 +1,28 @@
+result-view {
+  match { 
+    Result (result)
+  }
+  
+  message {
+    template ("Here are some recycling rules:")
+  }
+
+  render {
+    if (size(result) > 1) {
+      list-of (result) {
+        has-details (true)
+        where-each (item) {
+          layout-macro (result-thumbnail-card) {
+            param (result) {
+              expression (item)
+            }
+          }
+        }
+      }
+    } else-if (size(result) == 1) {
+      layout-match (result) {
+        mode (Details)
+      }
+    }
+  }
+}

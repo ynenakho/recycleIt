@@ -1,0 +1,39 @@
+layout-macro-def (result-thumbnail-card) {
+  params {
+    param (result) {
+      type (Response)
+      min (Required) max (One)
+    }
+  }
+  content {
+    thumbnail-card {
+      title-area {
+        halign (Start)
+        slot1 {
+          text {
+            style (Title_XS)
+            value ("#{value(result.item)}")
+          }
+        }
+        slot2 {
+          single-line {
+            text {
+              value ("Arrives in #{value(result.info)}")
+              style (Detail_M_Soft)
+            }
+          }
+        }
+        // slot3 {
+        //   single-line {
+        //     text {
+        //       value ("#{value(rideShare.priceRange)}")
+        //       style (Detail_M_Soft)
+        //     }
+        //   }
+        // }
+      }
+      image-url ("images/yes_recycle.png")
+      image-position (End)
+    }
+  }
+}

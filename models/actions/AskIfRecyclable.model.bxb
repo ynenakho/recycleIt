@@ -1,20 +1,21 @@
 action (AskIfRecyclable) {
   type(Fetch)
   description (ask if this is a recyclable?)
-  
+
   collect {
     input (material) {
       type (Material)
       min (Required) max (Many)
       default-init {
         intent {
-         goal: CreateMaterial 
+         goal: CreateMaterial
         }
       }
     }
   }
-  
-  output (IsRecyclable) {
+
+  output (Response) {
+  // output (IsRecyclable) {
     on-empty {
       drop-contextual-inputs
     }

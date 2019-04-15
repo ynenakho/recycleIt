@@ -1,4 +1,4 @@
-structure (Response) {
+structure (Result) {
   description (result after all API calls and calculations)
   property (item) {
     type (Item)

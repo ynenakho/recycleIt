@@ -1,38 +1,67 @@
 result-view {
-  match: Response (this)
-
+  match { 
+    Response (result)
+  }
+  
   message {
-    template("#{raw(this.text)}")
-  }
-  
-  render {
-    image-list-of (this.image)
+    template ("Here are some recycling rules:")
   }
 
-  conversation-drivers {
-    conversation-driver {
-      template (Yes)
-    }  
-    conversation-driver {
-      template (No)
-    }  
-  }
-  
-  followup {
-    prompt {
-      dialog ( Would you like to check on other item?)
-      
-      on-confirm {
-        intent {
-          goal: Response
+  render {
+    if (size(result) > 1) {
+      list-of (result) {
+        has-details (true)
+        where-each (item) {
+          layout-macro (result-thumbnail-card) {
+            param (result) {
+              expression (item)
+            }
+          }
         }
       }
-      
-      on-deny {     
-        intent {
-          goal:Thank 
-        }
+    } else-if (size(result) == 1) {
+      layout-match (result) {
+        mode (Details)
       }
     }
   }
 }
+
+// result-view {
+//   match: Response (this)
+// 
+//   message {
+//     template("#{raw(this.text)}")
+//   }
+//   
+//   render {
+//     image-list-of (this.image)
+//   }
+// 
+//   conversation-drivers {
+//     conversation-driver {
+//       template (Yes)
+//     }  
+//     conversation-driver {
+//       template (No)
+//     }  
+//   }
+//   
+//   followup {
+//     prompt {
+//       dialog ( Would you like to check on other item?)
+//       
+//       on-confirm {
+//         intent {
+//           goal: Response
+//         }
+//       }
+//       
+//       on-deny {     
+//         intent {
+//           goal:Thank 
+//         }
+//       }
+//     }
+//   }
+// }

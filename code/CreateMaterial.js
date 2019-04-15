@@ -49,7 +49,10 @@ function GetMaterialFromImage(image) {
   
   
   var response = http.postUrl(config.get('remote.url') + value, params,{ passAsJson: true });
+  if (!JSON.parse(response).responses[0].labelAnnotations)
+    return [{description: "unknown object", score: 1}];
   console.debug("RESPONSE",response);
+  console.debug("RESPONSE PARSED",JSON.parse(response));
   var data = JSON.parse(response).responses[0].labelAnnotations.map(resp => ({description: resp.description, score: resp.score}));
   console.debug("DATA",data);
   return data;
