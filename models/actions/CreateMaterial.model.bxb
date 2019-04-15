@@ -28,6 +28,11 @@ action (CreateMaterial) {
             goal: FetchImageAction
           }
         }
+        else-if(exists(option) ){
+          intent{
+            goal:SelectImage
+          }
+        }
       }
     }
   }
