@@ -35,5 +35,7 @@ layout-macro-def (result-thumbnail-card) {
       image-url ("images/yes_recycle.png")
       image-position (End)
     }
+    
   }
+  
 }

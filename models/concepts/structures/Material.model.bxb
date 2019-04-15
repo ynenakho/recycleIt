@@ -8,4 +8,7 @@ structure (Material) {
     type (ScoreConcept)
     min (Optional)
   }
+  features{
+    transient
+  }
 }

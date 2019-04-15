@@ -8,5 +8,7 @@ structure (Response) {
     type (Info)
     min (Required) max (One)
   }
-  
+  features{
+    transient
+  }
 }

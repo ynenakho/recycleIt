@@ -4,10 +4,10 @@ endpoints {
       accepted-inputs (material)
       local-endpoint ("AskIfRecyclable.js")
     }
-    action-endpoint (GetResponseView){
-      accepted-inputs (isRecyclable)
-      local-endpoint ("GetResponseView.js")
-    }
+    // action-endpoint (GetResponseView){
+    //   accepted-inputs (isRecyclable)
+    //   local-endpoint ("GetResponseView.js")
+    // }
     action-endpoint (GetThank) {
       local-endpoint ("GetThank.js")
     }

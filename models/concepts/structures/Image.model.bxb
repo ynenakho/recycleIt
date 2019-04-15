@@ -4,4 +4,7 @@ structure (Image) {
     type (ImageDataConcept)
     min (Optional)
   }
+  features{
+    transient
+  }
 }

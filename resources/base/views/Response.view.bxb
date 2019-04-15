@@ -1,6 +1,6 @@
 result-view {
   match { 
-    Result (result)
+    Response (result)
   }
   
   message {
@@ -25,4 +25,32 @@ result-view {
       }
     }
   }
+  
+   conversation-drivers{
+    conversation-driver{
+      template ("Yes")
+    }
+      conversation-driver{
+      template ("No")
+    }
+  }
+  
+  followup{
+    prompt{
+      dialog( Would you like to check more items?)
+      on-confirm{
+        intent{
+          goal:Response
+        }
+      }
+      on-deny{
+        intent{
+          goal:Thank
+        }
+      }
+    }   
+  }
+  
 }
+
+
