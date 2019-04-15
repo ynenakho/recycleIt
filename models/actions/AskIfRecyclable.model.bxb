@@ -15,7 +15,6 @@ action (AskIfRecyclable) {
   }
 
   output (Response) {
-  // output (IsRecyclable) {
     on-empty {
       drop-contextual-inputs
     }

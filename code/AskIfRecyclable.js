@@ -7,7 +7,7 @@ var value = secret.get('earthApiKey');
 function GetAllMaterials () {
   var response = http.getUrl(config.get('remote.earth.url') + "getMaterials?api_key=" + value, { passAsJson: true });
   console.debug("GetAllMaterials response =",response);
-  var data = JSON.parse(response).result.map(resp => ({item: resp.description, info: resp.long_description, id: resp.material_id, image: resp.image}));
+  var data = JSON.parse(response).result.map(resp => ({item: resp.description, info: resp.long_description, id: resp.material_id}));
   console.debug("GetAllMaterials data =",data);
   return data;
 }
@@ -54,12 +54,18 @@ module.exports.function = function askIfRecyclable (material) {
       resFromMaterialSearch = resFromMaterialSearch.concat(GetResultsFromApiSearch(material[i]));
   }
   console.debug("resFromMaterialSearch =", resFromMaterialSearch);
+  console.debug("Length =", resFromMaterialSearch.length)
   if (resFromMaterialSearch.length > 0) {
     var foundItemsArray = LookForMatch(allMaterials, resFromMaterialSearch);
     console.debug("Found materials =", foundItemsArray);
     if (foundItemsArray.length > 0) {
       // NEED TO IMPROVE TO RETURN ACTUAL VALUES
-      return foundItemsArray.slice(0,5);
+      foundItemsArray = foundItemsArray.filter((material, index, self) => index === self.findIndex((t) => (t.item === material.item && t.info === material.info)));
+      foundItemsArray = foundItemsArray.map(obj => {
+        obj.item = (obj.item[0] === '#') ? obj.item.substring(3): obj.item;
+        return obj;
+      });
+      return foundItemsArray;
     }
   }
   
@@ -69,7 +75,7 @@ module.exports.function = function askIfRecyclable (material) {
   
   // Mock for now? 
   // if we can find any of these in materials then we can say it is recyclable
-  const recyclables = ['carton', 'paper', 'can', 'glass' ,'conditioner ','napkins', 'metal','steel','aluminum','cardboard', 'tin', 'glass', 'jar' , 'bottle'];
+  const recyclables = ['carton', 'paper', 'can', 'glass' ,'conditioner ','napkins', 'metal','steel','aluminum','cardboard', 'tin', 'glass', 'jar' , 'bottle', 'plastic'];
   
   
 

@@ -4,9 +4,13 @@ result-view {
   }
   
   message {
-    template ("Here are some recycling rules:")
+    if (size(result) > 1) {
+      template ("Here are some recycling rules:")
+    } else-if (size(result) == 0) {
+      template ("No, you CANNOT recycle it!")
+    }
   }
-
+        
   render {
     if (size(result) > 1) {
       list-of (result) {
@@ -20,11 +24,28 @@ result-view {
         }
       }
     } else-if (size(result) == 1) {
-      layout-match (result) {
-        mode (Details)
-      }
-    }
+        layout-match (result) {
+          mode (Details)
+        }
+      } 
   }
+  
+//   followup {
+//     prompt {
+//       dialog ( Would you like to check on other item?)
+//       on-confirm {
+//         intent {
+//           goal: Response
+//         }
+//       }
+// 
+//       on-deny {     
+//         intent {
+//           goal:Thank 
+//         }
+//       }
+//     }
+//   }
 }
 
 // result-view {
