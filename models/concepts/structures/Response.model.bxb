@@ -8,8 +8,13 @@ structure (Response) {
     type (Info)
     min (Required) max (One)
   }
+<<<<<<< HEAD
   property (id) {
     type (Id)
     min (Required) max (One)
+=======
+  features{
+    transient
+>>>>>>> d848909138d539091a2c63d2f950f3fc30856988
   }
 }

@@ -1,3 +1,8 @@
+train (t-8jc2bvv2grbc3egichas61qwz) {
+  utterance ("[g:Response] can  you check is it recycable ? ")
+  plan (Y2BkkClITUxOTUktK9YrSk2uTM5JzSzRC0otLsjPK05lAAFGEAEA)
+  last-modified (1555308044910)
+}
 train (t-8y437ffk8055v1425qk2v2pay) {
   utterance ("[g:Response] Do you think if I should recycle a (car)[v:DescriptionConcept]?")
   plan (dY69CgIxEITn/H0JC1GwvHeQO5ArbK6wj3GEYEhCNii+vfFEuSIWCzP7fSyLJVaBSvPCu9SR+qktTap7SvBOiG2JHpi+wsnwgXVJ6qQfsjrbP2f2cuuuI6n4yVElRqMsNiXaRGb+c3Ylp6XoaEIy3jXeaYaEBSpMMMUM85wxatXQPoO8xZu/AA==)

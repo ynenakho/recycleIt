@@ -1,5 +1,5 @@
 train (t-xm11v9pu1zprd8tyngfb8c1b7) {
-  utterance ([g:Response:continue] how about this?)
+  utterance ([g:Response] how about this?)
   plan (Y2BkkClITUxOTUktK9YrSk2uTM5JzSzRC0otLsjPK05lAAFGEAEA)
-  last-modified (1555139461940)
+  last-modified (1555316387830)
 }
