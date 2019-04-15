@@ -1,0 +1,45 @@
+// layout {
+//   match: Directions (direction)
+//   mode (Details)
+// 
+//   content {
+    // section {
+    //   content {
+    //     map-card {
+    //       aspect-ratio (1:1)
+    //       title-area{
+    //         slot2 {
+    //           single-line {
+    //             spacer
+    //           }
+    //         }
+    //       }
+    //       markers {
+    //         marker {
+    //           geo ("direction.sourcePoint.point")
+    //           icon {
+    //             template (/icons/green-marker.png)
+    //           }
+    //           width (15)
+    //           height (20)
+    //           anchor-x (5)
+    //           anchor-y (15)
+    //           rotation (0)
+    //         }
+    //         marker {
+    //           geo ("direction.destinationPoint.point")
+    //           icon {
+    //             template (/icons/red-marker.png)
+    //           }
+    //           width (20)
+    //           height (20)
+    //           anchor-x (5)
+    //           anchor-y (15)
+    //           rotation (0)
+    //         }
+    //       }
+    //     }
+    //   }
+    // }
+//   }
+// }

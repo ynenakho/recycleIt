@@ -26,7 +26,7 @@ function GetResultsFromApiSearch(material) {
   return data;
 }
 
-function LookForMatch(allMaterials, resToSearchIn) {
+function LookForMatch(allMaterials, resToSearchIn, sourcePoint) {
   let result = [];
   console.debug("resTosearchInId =", resToSearchIn[0].id);
   console.debug("allMaterials[0].id =", allMaterials[0].id);
@@ -34,7 +34,9 @@ function LookForMatch(allMaterials, resToSearchIn) {
     for(let j = 0; j < resToSearchIn.length; j++) {
       if (allMaterials[i].id === resToSearchIn[j].id) {
         console.debug("HERE");
-        result.push(allMaterials[i]); 
+        var temp = allMaterials[i];
+        temp.sourcePoint = sourcePoint;
+        result.push(temp); 
       }
     }
   }
@@ -51,7 +53,7 @@ function checkMatch(material, allMaterials) {
   return false;
 }
 
-module.exports.function = function askIfRecyclable (material) {
+module.exports.function = function askIfRecyclable (material, sourcePoint) {
   console.debug(material);
   var allMaterials = GetAllMaterials();
   let resFromMaterialSearch = [];
@@ -64,7 +66,7 @@ module.exports.function = function askIfRecyclable (material) {
   console.debug("resFromMaterialSearch =", resFromMaterialSearch);
   console.debug("Length =", resFromMaterialSearch.length)
   if (resFromMaterialSearch.length > 0) {
-    var foundItemsArray = LookForMatch(allMaterials, resFromMaterialSearch);
+    var foundItemsArray = LookForMatch(allMaterials, resFromMaterialSearch, sourcePoint);
     console.debug("Found materials =", foundItemsArray);
     if (foundItemsArray.length > 0) {
       foundItemsArray = foundItemsArray.map(obj => {

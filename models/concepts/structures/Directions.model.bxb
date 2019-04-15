@@ -1,0 +1,11 @@
+structure (Directions) {
+  description (Directions from source point to destination)
+  property (sourcePoint) {
+    type (SourcePoint)
+    min (Optional) max (One)
+  }
+  property (destinationPoint) {
+    type (DestinationPoint)
+    min (Optional) max (One)
+  }
+}

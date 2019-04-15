@@ -12,4 +12,9 @@ structure (Response) {
     type (Id)
     min (Required) max (One)
   }
+  property (sourcePoint) {
+    type (SourcePoint)
+    min (Optional)
+    
+  }
 }

@@ -1,0 +1,27 @@
+action (FindDirections) {
+  description (Finds a direction from source point to destination point.)
+  type (Fetch)
+  collect {
+    input (response) {
+      type (Response)
+      min(Required) max(One)
+      prompt-behavior (AlwaysSelection)
+    
+    }
+    // input (sourcePoint) {
+    //   type (SourcePoint)
+    //   min (Required) max (One)
+    //   default-init {
+    //     intent {
+    //       goal: SourcePoint
+    //       route: viv.geo.CurrentLocation
+    //     }
+    //   }
+    // }
+    // input (destinationPoint) {
+    //   type (DestinationPoint)
+    //   min (Required) max (One)
+    // }
+  }
+  output (SourcePoint)
+}

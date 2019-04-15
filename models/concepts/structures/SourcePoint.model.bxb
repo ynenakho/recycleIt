@@ -1,0 +1,4 @@
+structure (SourcePoint) {
+  description (Source geo point location)
+  role-of (viv.geo.NamedPoint)
+}

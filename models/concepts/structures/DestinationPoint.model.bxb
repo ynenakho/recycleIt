@@ -1,0 +1,4 @@
+structure (DestinationPoint) {
+  description (Destination geo point location)
+  role-of (viv.geo.NamedPoint)
+}

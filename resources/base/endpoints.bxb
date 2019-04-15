@@ -1,7 +1,7 @@
 endpoints {
   action-endpoints {
     action-endpoint (AskIfRecyclable){
-      accepted-inputs (material)
+      accepted-inputs (material, sourcePoint)
       local-endpoint ("AskIfRecyclable.js")
     }
     action-endpoint (GetThank) {
@@ -13,6 +13,10 @@ endpoints {
     }
     action-endpoint (FetchImageAction) {
       local-endpoint ("FetchImageAction.js")
+    }
+    action-endpoint (FindDirections) {
+      accepted-inputs (response)
+      local-endpoint (FindDirections.js)
     }
   }
 }

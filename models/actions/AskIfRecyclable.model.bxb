@@ -1,5 +1,5 @@
 action (AskIfRecyclable) {
-  type(Fetch)
+  type(Constructor)
   description (ask if this is a recyclable?)
 
   collect {
@@ -9,6 +9,17 @@ action (AskIfRecyclable) {
       default-init {
         intent {
          goal: CreateMaterial
+        }
+      }
+    }
+    
+    input (sourcePoint) {
+      type (SourcePoint)
+      min (Required)
+      default-init {
+        intent {
+          goal: SourcePoint
+          route: viv.geo.CurrentLocation
         }
       }
     }
