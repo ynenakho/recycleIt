@@ -1,7 +1,8 @@
 action (FetchImageAction) {
   type (Search)
   description (Fetch an image from camera)
-  output (ImageDataConcept) {
+  
+  output (Image) {
     on-empty {
       drop-contextual-inputs
     }

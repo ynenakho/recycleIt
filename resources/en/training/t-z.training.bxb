@@ -1,3 +1,8 @@
+train (t-z3qs53qfvow66etqkdj8rz7bb) {
+  utterance ("[g:Response:continue,r:SelectImage] can you choose (from pictures)[v:Option]")
+  plan (fZDLCsJADEVvre8/UARF9/0HcSFdiFDB/TheZXBsS2dQ/HtHRakQXSQkOYcQgj4GJZXmnheXVNQ3bWl8kp7VkRhJKKMri9wRM4ku6d/C1vCKibjdZc9a7eyPNXN3Sg81SbxkpTwroyymEl1UDPzjDCVnXXpT5BhLbENL7V+P+POjLhqI0UQLbXRC10NUmyBMopC/Iw7xcHEH)
+  last-modified (1555302844748)
+}
 train (t-znnrwedzcx22po66bm8fhkz99) {
   utterance ("[g:Response] What do you think, should I recycle my (brother)[v:DescriptionConcept]?")
   plan (dY69CgIxEITn/H0JC1GwvHeQO5ArbK6wj3GEYEhCNii+vfFEuSIWCzP7fSyLJVaBSvPCu9SR+qktTap7SvBOiG2JHpi+wsnwgXVJ6qQfsjrbP2f2cuuuI6n4yVElRqMsNiXaRGb+c3Ylp6XoaEIy3jXeaYaEBSpMMMUM85wxatXQPoO8xZu/AA==)

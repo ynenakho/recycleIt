@@ -1,6 +1,7 @@
 action (AskIfRecyclable) {
   type(Fetch)
   description (ask if this is a recyclable?)
+  
   collect {
     input (material) {
       type (Material)
@@ -12,6 +13,7 @@ action (AskIfRecyclable) {
       }
     }
   }
+  
   output (IsRecyclable) {
     on-empty {
       drop-contextual-inputs

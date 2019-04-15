@@ -1,6 +1,7 @@
 action (GetResponseView) {
   type (Constructor)
   description (choose the view for response)
+  
   collect {
     input (isRecyclable) {
       type (IsRecyclable)
@@ -12,6 +13,7 @@ action (GetResponseView) {
       }
     }
   }
+  
   output (Response) {
     on-empty {
       drop-contextual-inputs

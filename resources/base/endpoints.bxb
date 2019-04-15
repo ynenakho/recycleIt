@@ -18,9 +18,5 @@ endpoints {
     action-endpoint (FetchImageAction) {
       local-endpoint ("FetchImageAction.js")
     }
-    action-endpoint (CreateImage) {
-      accepted-inputs (imageDataConcept)
-      local-endpoint ("CreateImage.js")
-    }
   }
 }

@@ -1,25 +1,35 @@
 action (CreateMaterial) {
   description (Constructor to material)
   type(Constructor)
+  
   collect {
     input (description) {
       type (DescriptionConcept)
       min (Optional) max (Many)
-      
     }
+    
+    input (option) {
+      type(Option)
+      min(Optional) max (One)
+      hidden
+    }
+    
     computed-input (image) {
       type (Image)
       min (Optional) max (One)
       compute {
-        if (!exists(description)) {
+        if (!exists(description) && exists(option)) {
           intent {
-            goal: CreateImage
+            goal: SelectImage
+          }
+        }
+        else-if (!exists(description) && !exists(option)) {
+          intent {
+            goal: FetchImageAction
           }
         }
       }
     }
-    
-    
   }
   output (Material)
 }
