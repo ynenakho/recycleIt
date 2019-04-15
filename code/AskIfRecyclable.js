@@ -41,16 +41,24 @@ function LookForMatch(allMaterials, resToSearchIn) {
   return result;
 }
 
+function checkMatch(material, allMaterials) {
+  let words = material.description.toLowerCase().split(' ');
+  for (let i = 0; i < words.length; i++) {
+    
+    if (words[i] !== 'product' && allMaterials.find(obj => obj.item.toLowerCase().includes(words[i]) !== -1))
+      return true;
+  }
+  return false;
+}
+
 module.exports.function = function askIfRecyclable (material) {
   console.debug(material);
   var allMaterials = GetAllMaterials();
-  
-  // http://api.earth911.com/earth911.searchMaterials?api_key=5e1a61cbd7b34190&query=paper bag&max_results=10
   let resFromMaterialSearch = [];
   var len = material.length;
   
   for (let i = 0; i < len; i++) {
-    if ((material[i].score > 0.5 && len < 3) || (material[i].score > 0.7))
+    if(((material[i].score > 0.5 && len < 3) || (material[i].score > 0.6)) && checkMatch(material[i], allMaterials))
       resFromMaterialSearch = resFromMaterialSearch.concat(GetResultsFromApiSearch(material[i]));
   }
   console.debug("resFromMaterialSearch =", resFromMaterialSearch);
@@ -59,26 +67,16 @@ module.exports.function = function askIfRecyclable (material) {
     var foundItemsArray = LookForMatch(allMaterials, resFromMaterialSearch);
     console.debug("Found materials =", foundItemsArray);
     if (foundItemsArray.length > 0) {
-      // NEED TO IMPROVE TO RETURN ACTUAL VALUES
-      foundItemsArray = foundItemsArray.filter((material, index, self) => index === self.findIndex((t) => (t.item === material.item && t.info === material.info)));
       foundItemsArray = foundItemsArray.map(obj => {
         obj.item = (obj.item[0] === '#') ? obj.item.substring(3): obj.item;
         return obj;
       });
+      foundItemsArray = foundItemsArray.filter((material, index, self) => index === self.findIndex((t) => (t.item === material.item && t.info === material.info)));
       return foundItemsArray;
     }
   }
-  
-  
-  // Logic to understand if something recyclable? 
-  // Best way is to send an API call with our materials to something that can actually tell if this is recyclable?
-  
-  // Mock for now? 
-  // if we can find any of these in materials then we can say it is recyclable
-  const recyclables = ['carton', 'paper', 'can', 'glass' ,'conditioner ','napkins', 'metal','steel','aluminum','cardboard', 'tin', 'glass', 'jar' , 'bottle', 'plastic'];
-  
-  
 
+  const recyclables = ['carton', 'paper', 'can', 'glass' ,'conditioner ','napkins', 'metal','steel','aluminum','cardboard', 'tin', 'glass', 'jar' , 'bottle', 'plastic'];
   
   for (let i =0; i < material.length; i++) {
     var current = (material[i].description).toUpperCase();
@@ -90,8 +88,5 @@ module.exports.function = function askIfRecyclable (material) {
          return foundItemsArray;
     }
   }
-  
-  
-  // Otherwise we say it is not recyclable
   return null;
 }

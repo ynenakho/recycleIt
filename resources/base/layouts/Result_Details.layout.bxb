@@ -13,22 +13,6 @@ layout {
               style (Title_L)
             }
           }
-          // slot2 {
-          //   paragraph {
-          //     value ("From #{value(hotel.lowRate)} • #{value(hotel.rating)} stars")
-          //     style (Title_XS)
-          //   }
-          // }
-          // slot3 {
-          //   layout-macro (hotel-rating) {
-          //     param (rating) {
-          //       expression (hotel.rating)
-          //     }
-          //     param (reviewCount) {
-          //       expression (hotel.reviewCount)
-          //     }
-          //   }
-          // }
         }
       }
     }

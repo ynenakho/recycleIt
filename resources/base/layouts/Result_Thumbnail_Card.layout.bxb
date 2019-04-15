@@ -16,26 +16,13 @@ layout-macro-def (result-thumbnail-card) {
           }
         }
         slot2 {
-          single-line {
-            text {
-              value ("Arrives in #{value(result.info)}")
-              style (Detail_M_Soft)
-            }
+          paragraph ("#{value(result.info)}") {
+            style (Detail_M_Soft)
           }
         }
-        // slot3 {
-        //   single-line {
-        //     text {
-        //       value ("#{value(rideShare.priceRange)}")
-        //       style (Detail_M_Soft)
-        //     }
-        //   }
-        // }
       }
       image-url ("images/yes_recycle.png")
       image-position (End)
     }
-    
   }
-  
 }

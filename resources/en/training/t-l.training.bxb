@@ -8,3 +8,8 @@ train (t-ljpsizzn7sqi48rngxdk4o9an) {
   plan (rY7LCgIxDEWvr1HBT3AhCi7nH2QEmYWbWbiv9QrFoS1NUfx7i+KgUHcSArk5hxBMMfdUmidepQzUd93SxLKheGeFWOXojvEtHAxvWOSkWprnrI7tjzMbudTnDyn7yV5FBqNaLHO0Cky8c9Y5Z0vRwfhonK2c1fTx794EPfQxwBAjFBinjK9NkRK6nqVCYniZDw==)
   last-modified (1555138514328)
 }
+train (t-lk4gjp9qjs1vkk98b2q5kun2v) {
+  utterance ([g:Thank] Im done)
+  plan (Y2BkkCxITUxOTUktK9YrSk2uTM5JzSzRC8lIzMtmAAFGEAEA)
+  last-modified (1555323192801)
+}

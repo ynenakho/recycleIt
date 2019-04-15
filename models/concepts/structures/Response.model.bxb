@@ -12,7 +12,4 @@ structure (Response) {
     type (Id)
     min (Required) max (One)
   }
-  features{
-    transient
-  }
 }

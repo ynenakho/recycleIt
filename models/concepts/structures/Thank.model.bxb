@@ -1,10 +1,11 @@
 structure (Thank) {
   description (last output)
-  property (text) {
+ property (text) {
     type (viv.core.Text)
     min (Required) max (One)
   }
-  features{
-    transient
+  property (image) {
+    type (Image)
+    min (Required) max (One)
   }
 }

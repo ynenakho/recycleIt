@@ -1,11 +1,11 @@
 result-view {
-  match: Thank()
- 
+  match: Thank (this)
+
   message {
-    template (Thank you for making inpact to make our World a Better Place!) 
+    template("#{raw(this.text)}")
   }
   
   render {
-    nothing
+    image-list-of (this.image)
   }
 }

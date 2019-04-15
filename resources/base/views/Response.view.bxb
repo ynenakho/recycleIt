@@ -32,26 +32,13 @@ result-view {
 
   conversation-drivers{
     conversation-driver{
-      template ("Yes")
+      template ("Check photo from gallery")
     }
-      conversation-driver{
-      template ("No")
+    conversation-driver{
+      template ("Check from camera")
     }
-  }
-
-  followup{
-    prompt{
-      dialog( Would you like to check more items?)
-      on-confirm{
-        intent{
-          goal:Response
-        }
-      }
-      on-deny{
-        intent{
-          goal:Thank
-        }
-      }
+    conversation-driver{
+      template ("Im done")
     }
   }
 }

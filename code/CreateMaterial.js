@@ -4,13 +4,12 @@ var config = require('config');
 var secret = require('secret');
 var value = secret.get('gcpApiKey');
 
-
 function GetMaterialFromImage(image) {
   
   var params;
  
-   console.log('image = ', image);
-  
+  console.log('image = ', image);
+
   if (image.url) {
     params = {
       "requests": [
@@ -46,8 +45,6 @@ function GetMaterialFromImage(image) {
     };
   }
  
-  
-  
   var response = http.postUrl(config.get('remote.url') + value, params,{ passAsJson: true });
   if (!JSON.parse(response).responses[0].labelAnnotations)
     return [{description: "unknown object", score: 1}];
@@ -58,11 +55,7 @@ function GetMaterialFromImage(image) {
   return data;
 }
 
-
-
-
 module.exports.function = function createMaterial (description,image) {
-  
   var answer = [];
   
   if (image) {
@@ -73,9 +66,8 @@ module.exports.function = function createMaterial (description,image) {
        description: description[i],
        score: 1
       }
-       answer.push(material)
+      answer.push(material);
     }  
   }
-  
-  return answer
+  return answer;
 }
