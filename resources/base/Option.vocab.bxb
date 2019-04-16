@@ -1,5 +1,8 @@
 vocab (peacedevs.recycleit.Option) {
-"gallery"
- "from pictures"
-  "recently  pictures"
+  "gallery"
+  "from pictures"
+  "my pictures"
+  "my photos"
+  "my pics"
+  "recent pictures"
 }

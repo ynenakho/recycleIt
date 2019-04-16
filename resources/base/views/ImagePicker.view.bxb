@@ -4,7 +4,9 @@ input-view {
   }
 
   message {
-    template (Pick an image!)
+    template (Gallery) {
+      speech (What would you like to recycle?)
+    }
   }
 
   render {

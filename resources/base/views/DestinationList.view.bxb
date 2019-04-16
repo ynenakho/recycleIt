@@ -1,27 +1,44 @@
 result-view {
-  match: DestinationList (destination_list)
+  match: DestinationList (recycling_points)
 
   message {
-    template("#{raw(destination_list.name)}")
+    if (size(recycling_points) > 1) {
+      template("I found some recycling locations for you.") 
+    } else {
+      template () {
+        speech ("#{value(recycling_points[0].name)}")
+      }
+    }
   }
   
   render {
-    if (size(destination_list) > 1) {
-      list-of (destination_list) {
+    if (size(recycling_points) > 1) {
+      list-of (recycling_points) {
         has-details (true)
         where-each (item) {
           layout-macro (store-list) {
-            param (destination_list) {
+            param (recycling_points) {
               expression (item)
             }
           }
         }
       }
     }
-     else-if (size(destination_list) == 1) {
-      layout-match (destination_list) {
+     else-if (size(recycling_points) == 1) {
+      layout-match (recycling_points) {
         mode (Details)
       }
+    }
+  }
+  conversation-drivers{
+    conversation-driver{
+      template ("Check photo from gallery")
+    }
+    conversation-driver{
+      template ("Check from camera")
+    }
+    conversation-driver{
+      template ("Im done")
     }
   }
 }

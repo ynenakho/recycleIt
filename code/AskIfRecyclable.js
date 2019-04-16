@@ -40,8 +40,6 @@ function GetLocation(materialId, sourcePoint) {
   var queryString = http.makeQueryString(queryObject);
   var response = http.getUrl(config.get('remote.earth.url') + "searchLocations?" + queryString, { passAsJson: true });
   console.debug("GetLocation response = ",response);
-  // var data = JSON.parse(response).result.map(resp => ({locationName: resp.description, locationId: resp.location_id, longitude: resp.longitude, latitude: resp.latitude, distance: resp.distance}));
-  // console.debug("GetLocation data =", data);
   var data = JSON.parse(response).result.map(resp => ({locationId: resp.location_id, point : {longitude: resp.longitude, latitude: resp.latitude}}));
   console.debug("GetLocation data =", data);
   return data;
@@ -71,7 +69,6 @@ function LookForMatch(allMaterials, resToSearchIn, sourcePoint) {
         console.debug("HERE");
         var temp = allMaterials[i];
         temp.sourcePoint = sourcePoint;
-        // temp.destinationLocations = GetLocation(allMaterials[i].id, sourcePoint);
         temp.destinationPoint = GetLocation(allMaterials[i].id, sourcePoint);
         result.push(temp);
       }
@@ -112,8 +109,6 @@ module.exports.function = function askIfRecyclable (material, sourcePoint) {
       });
       foundItemsArray = foundItemsArray.filter((material, index, self) => index === self.findIndex((t) => (t.item === material.item && t.info === material.info)));
       console.debug("FINAL_ARRAY =", foundItemsArray);
-      // foundItemsArray = foundItemsArray.map(dest => dest.destinationLocations.filter((location, index, self) => index === self.findIndex(t => (t.locationId === location.locationId))));
-      // console.debug("FINAL_ARRAY2 =", foundItemsArray);
       return foundItemsArray;
     }
   }

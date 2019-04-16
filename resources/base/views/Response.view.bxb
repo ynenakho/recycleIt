@@ -23,13 +23,24 @@ result-view {
           }
         }
       }
-    } else-if (size(result) == 1) {
-        layout-match (result) {
-          mode (Details)
+    } 
+    else-if (size(result) == 1) {
+      layout-match (result) {
+        mode (Details)
+      }
+    }
+    else {
+      layout {
+        section {
+          content {
+            image ("images/no_recycle.png") {
+              aspect-ratio (1:1)
+            }
+          }
         }
       }
+    }
   }
-
   conversation-drivers{
     conversation-driver{
       template ("Check photo from gallery")

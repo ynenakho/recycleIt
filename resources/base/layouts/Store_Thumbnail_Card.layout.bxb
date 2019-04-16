@@ -1,6 +1,6 @@
 layout-macro-def (store-list) {
   params {
-    param (destination_list) {
+    param (recycling_points) {
       type (DestinationList)
       min (Required) max (One)
     }
@@ -12,20 +12,20 @@ layout-macro-def (store-list) {
         slot1 {
           text {
             style (Title_XS)
-            value ("#{value(destination_list.name)}")
+            value ("#{value(recycling_points.name)}")
           }
         }
         slot2 {
           single-line {
             text {
-              value ("#{value(destination_list.phone)}")
+              value ("#{value(recycling_points.phone)}")
               style (Detail_M_Soft)
             }
           }
         }
         slot3 {
           paragraph {
-            value ("#{value(destination_list.address)}\n #{value(destination_list.city)} #{value(destination_list.state)} #{value(destination_list.zip)}")
+            value ("#{value(recycling_points.address)}\n #{value(recycling_points.city)} #{value(recycling_points.state)} #{value(recycling_points.zip)}")
             style (Detail_M_Soft)
           }
         }
