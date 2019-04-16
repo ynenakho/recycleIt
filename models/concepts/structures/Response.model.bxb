@@ -8,6 +8,10 @@ structure (Response) {
     type (Info)
     min (Required) max (One)
   }
+  property (image) {
+    type (Image)
+    min (Required) max (One)
+  }
   property (id) {
     type (Id)
     min (Required) max (One)

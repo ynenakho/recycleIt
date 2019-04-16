@@ -3,6 +3,7 @@ var http = require('http');
 var config = require('config');
 var secret = require('secret');
 var value = secret.get('earthApiKey');
+var unsplashKey = secret.get('unsplashApiKey');
 
 function GetAllMaterials () {
   var response = http.getUrl(config.get('remote.earth.url') + "getMaterials?api_key=" + value, { passAsJson: true });
@@ -87,6 +88,22 @@ function checkMatch(material, allMaterials) {
   return false;
 }
 
+function GetImageFromUnsplash(materialName) {
+  var queryObject = {
+    q: materialName,
+    per_page: 3,
+    key: "12212691-8011cba36455e1a0830689c43"
+  };
+  var queryString = http.makeQueryString(queryObject);
+
+  var res = http.getUrl("https://pixabay.com/api/?" + queryString , {passAsJson: true, cacheTime: 20000});
+  console.debug("!!!!!GetImageFromUnsplash response = ", res);
+  var image = {url: JSON.parse(res).totalHits !== 0 ? JSON.parse(res).hits[0].webformatURL : "images/yes_recycle.png"};
+  console.debug("IMAGE=", image)
+
+  return image;
+}
+
 module.exports.function = function askIfRecyclable (material, sourcePoint) {
   console.debug(material);
   var allMaterials = GetAllMaterials();
@@ -94,20 +111,27 @@ module.exports.function = function askIfRecyclable (material, sourcePoint) {
   var len = material.length;
 
   for (let i = 0; i < len; i++) {
-    if(((material[i].score > 0.5 && len < 3) || (material[i].score > 0.6)) && checkMatch(material[i], allMaterials))
+    if(((material[i].score > 0.5 && len < 3) || (material[i].score > 0.6)) && checkMatch(material[i], allMaterials)) {
       resFromMaterialSearch = resFromMaterialSearch.concat(GetResultsFromApiSearch(material[i]));
+    }
   }
   console.debug("resFromMaterialSearch =", resFromMaterialSearch);
   console.debug("Length =", resFromMaterialSearch.length)
   if (resFromMaterialSearch.length > 0) {
     var foundItemsArray = LookForMatch(allMaterials, resFromMaterialSearch, sourcePoint);
     console.debug("Found materials =", foundItemsArray);
+    // GetImageFromUnsplash("car");
     if (foundItemsArray.length > 0) {
       foundItemsArray = foundItemsArray.map(obj => {
         obj.item = (obj.item[0] === '#') ? obj.item.substring(3): obj.item;
         return obj;
       });
-      foundItemsArray = foundItemsArray.filter((material, index, self) => index === self.findIndex((t) => (t.item === material.item && t.info === material.info)));
+      foundItemsArray = foundItemsArray.filter((material, index, self) => index === self.findIndex((t) => (t.item === material.item)));
+      console.debug("BEFORE =", foundItemsArray);
+      foundItemsArray = foundItemsArray.map(obj => {
+        obj.image = GetImageFromUnsplash(obj.item);
+        return obj;
+      });
       console.debug("FINAL_ARRAY =", foundItemsArray);
       return foundItemsArray;
     }

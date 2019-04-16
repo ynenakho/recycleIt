@@ -26,6 +26,9 @@ action (SelectImage) {
           value: Image {
             url: viv.core.Url("https://cdn.aws.toolstation.com/images/141020-UK/800/43934.jpg")
           }
+          value: Image {
+            url: viv.core.Url("https://img.staticbg.com/images/oaupload/banggood/images/12/78/9ffb00a5-f913-45d4-b1ee-9e6c08675fba.jpg")
+          }
         }
       }
     }

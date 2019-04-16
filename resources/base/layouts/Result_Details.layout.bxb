@@ -75,5 +75,15 @@ layout {
         }
       }
     }
+    else {
+      section {
+        content {
+          image ("#{value(result.image.url)}") {
+            // aspect-ratio (1:1)
+            // object-fit (Cover)
+          }
+        }
+      }
+    }
   }
 }
