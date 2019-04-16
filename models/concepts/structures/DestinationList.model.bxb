@@ -2,42 +2,42 @@ structure (DestinationList) {
   description (dest list structure)
   property (name) {
     type (Name)
-    min (Optional) max (One)
+    min (Required) max (One)
   }
   property (address) {
     type (Address)
-    min (Optional) max (One)
+    min (Required) max (One)
   }
   property (city) {
     type (City)
-    min (Optional) max (One)
+    min (Required) max (One)
   }
   property (state) {
     type (State)
-    min (Optional) max (One)
+    min (Required) max (One)
   }
   property (zip) {
     type (Zip)
-    min (Optional) max (One)
+    min (Required) max (One)
   }
   property (phone) {
     type (Phone)
-    min (Optional) max (One)
+    min (Required) max (One)
   }
   property (website) {
     type (Website)
+    min (Required) max (One)
+  }
+  property (destinationPoint) {
+    type (DestinationPoint)
     min (Optional) max (One)
   }
-  property (latitude) {
-    type (Latitude)
-    min (Optional) max (One)
-  }
-  property (longitude) {
-    type (Longitude)
+  property (sourcePoint) {
+    type (SourcePoint)
     min (Optional) max (One)
   }
   property (materials) {
     type (RecycleMaterial)
-    min (Optional) max (Many)
+    min (Required) max (Many)
   }
 }

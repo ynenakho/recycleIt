@@ -1,41 +1,121 @@
-layout-macro-def (store-list) {
-  params {
-    param (destination_list) {
-      type (DestinationList)
-      min (Required) max (One)
-    }
-  }
+layout {
+  match: DestinationList (this)
+  mode (Details)
+
   content {
-    thumbnail-card {
-      title-area {
-        hAlign (Start)
-        slot1 {
-          text {
-            style (Title_S)
-            value ("olalala ")
-          }
-        }
-        slot2 {
-          single-line {
+    section {
+      content {
+        title-area {
+          halign (Center)
+          slot1 {
             text {
-              value ("Arrives in #{value(destination_list.name)}")
-              style (Detail_L)
+              value ("#{value(this.name)}")
+              style (Title_L)
             }
           }
         }
-        slot3 {
-          single-line {
-            text {
-              value ("lalalal masha ")
-              style (Detail_M_Soft)
+        compound-card {
+          content {
+            map-card {
+              title-area {
+                slot2 {
+                  single-line {
+                    spacer
+                  }
+                }
+              }
+              markers {
+                marker {
+                  geo (this.sourcePoint.point)
+                  icon ("icons/green-marker.png")
+                  width (15)
+                  height (20)
+                  anchor-x (5)
+                  anchor-y (15)
+                  rotation (0)
+                }
+                marker {
+                  geo (this.destinationPoint.point)
+                  icon ("icons/red-marker.png")
+                  width (20)
+                  height (20)
+                  anchor-x (5)
+                  anchor-y (15)
+                  rotation (0)
+                }
+              }
+            }
+            hbox {
+              content {
+                vbox {
+                  halign (Start)
+                  content {
+                    single-line {
+                      text {
+                        value ("#{value(this.address)}")
+                        style (Detail_M)
+                      }
+                    }
+                    single-line {
+                      text {
+                        value ("#{value(this.city)} #{value(this.state)} #{value(this.zip)}")
+                        style (Detail_M)
+                      }
+                    }
+                  }
+                }
+                vbox {
+                  valign (Middle)
+                  content {
+                    single-line {
+                      text {
+                        value ("#{value(this.phone)}")
+                        style (Detail_M_Soft)
+                      }
+                    }
+                  }
+                }
+              }
+            }
+            title-area {
+              halign (Center) 
+              slot2 {
+                paragraph {
+                  value {
+                    template ("#{value(this.website)}")
+                  }
+                  style (Detail_M_Soft)
+                }
+              }
+            }
+          }
+        }
+        title-area {
+          halign (Center) 
+          slot2 {
+            single-line {
+              text {
+                value ("Accepted items:")
+                style (Detail_M)
+              }
+            }
+          }
+        }
+        partitioned {
+          content {
+            for-each (this.materials) {
+              as (material) {
+                single-line {
+                  text {
+                    value ("#{value(material)}")
+                    style (Legal)
+                  }
+                }
+              }
             }
           }
         }
       }
-      image-url {
-        template ("images/test.jpg")
-      }
-      image-position (End)
     }
   }
 }

@@ -1,21 +1,16 @@
 result-view {
-  match{
-      DestinationList(destination_list)
-  }
+  match: DestinationList (destination_list)
 
   message {
     template("#{raw(destination_list.name)}")
   }
   
-
- 
-    render {
-    if (size(destination_list) > 0) {
+  render {
+    if (size(destination_list) > 1) {
       list-of (destination_list) {
         has-details (true)
         where-each (item) {
           layout-macro (store-list) {
- 
             param (destination_list) {
               expression (item)
             }
@@ -23,10 +18,10 @@ result-view {
         }
       }
     }
-    //  else-if (size(destination_list) == 1) {
-    //   layout-match (store-list) {
-    //     mode (Details)
-    //   }
-    // }
+     else-if (size(destination_list) == 1) {
+      layout-match (destination_list) {
+        mode (Details)
+      }
+    }
   }
 }

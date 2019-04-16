@@ -3,6 +3,6 @@ structure (DestinationPoint) {
   role-of (viv.geo.NamedPoint)
   property (locationId) {
     type (viv.core.Text)
-    min (Required) max (One)
+    min (Optional) max (One)
   }
 }

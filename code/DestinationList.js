@@ -4,7 +4,7 @@ var config = require('config');
 var secret = require('secret');
 var value = secret.get('earthApiKey');
 
-function GetListDestinations (locationId) {
+function GetListDestinations (locationId, sourcePoint) {
   var queryObject = {
     api_key: value,
     location_id: locationId
@@ -24,8 +24,13 @@ function GetListDestinations (locationId) {
     zip: resp.postal_code ? resp.postal_code : "unknown",
     phone: resp.phone ? resp.phone : "unknown",
     website: resp.url ? resp.url : "unknown",
-    latitude: resp.latitude ? resp.latitude : "unknown",
-    longitude: resp.longitude ? resp.longitude : "unknown",
+    destinationPoint: {
+      point : {
+        latitude: resp.latitude ? resp.latitude : "unknown",
+        longitude: resp.longitude ? resp.longitude : "unknown"
+      }
+    },
+    sourcePoint: sourcePoint,
     materials: resp.materials ? resp.materials.map(material => material.description) : "unknown"
   });
 
@@ -38,7 +43,7 @@ module.exports.function = function DestinationList (response) {
   let result = [];
 
   for (let i = 0; i < response.destinationPoint.length; i++) {
-    result.push(GetListDestinations(response.destinationPoint[i].locationId));
+    result.push(GetListDestinations(response.destinationPoint[i].locationId, response.sourcePoint));
   }
 
   console.debug("RESULT!!! =", result)

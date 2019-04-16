@@ -1,0 +1,39 @@
+layout-macro-def (store-list) {
+  params {
+    param (destination_list) {
+      type (DestinationList)
+      min (Required) max (One)
+    }
+  }
+  content {
+    thumbnail-card {
+      title-area {
+        halign (Start)
+        slot1 {
+          text {
+            style (Title_XS)
+            value ("#{value(destination_list.name)}")
+          }
+        }
+        slot2 {
+          single-line {
+            text {
+              value ("#{value(destination_list.phone)}")
+              style (Detail_M_Soft)
+            }
+          }
+        }
+        slot3 {
+          paragraph {
+            value ("#{value(destination_list.address)}\n #{value(destination_list.city)} #{value(destination_list.state)} #{value(destination_list.zip)}")
+            style (Detail_M_Soft)
+          }
+        }
+      }
+      image-url {
+        template ("https://c8.alamy.com/comp/K8A7F1/earth-planet-with-recycle-symbol-design-K8A7F1.jpg")
+      }
+      image-position (End)
+    }
+  }
+}

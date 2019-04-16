@@ -6,7 +6,7 @@ layout {
     section {
       content {
         title-area {
-          halign (Start)
+          halign (Center)
           slot1 {
             text {
               value ("#{value(result.item)}")
