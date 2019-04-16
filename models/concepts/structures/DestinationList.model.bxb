@@ -1,7 +1,43 @@
 structure (DestinationList) {
   description (dest list structure)
   property (name) {
-    type (viv.core.Text)
+    type (Name)
     min (Optional) max (One)
+  }
+  property (address) {
+    type (Address)
+    min (Optional) max (One)
+  }
+  property (city) {
+    type (City)
+    min (Optional) max (One)
+  }
+  property (state) {
+    type (State)
+    min (Optional) max (One)
+  }
+  property (zip) {
+    type (Zip)
+    min (Optional) max (One)
+  }
+  property (phone) {
+    type (Phone)
+    min (Optional) max (One)
+  }
+  property (website) {
+    type (Website)
+    min (Optional) max (One)
+  }
+  property (latitude) {
+    type (Latitude)
+    min (Optional) max (One)
+  }
+  property (longitude) {
+    type (Longitude)
+    min (Optional) max (One)
+  }
+  property (materials) {
+    type (RecycleMaterial)
+    min (Optional) max (Many)
   }
 }

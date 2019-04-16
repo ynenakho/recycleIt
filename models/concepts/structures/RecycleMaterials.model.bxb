@@ -1,0 +1,7 @@
+structure (RecycleMaterials) {
+  description (Collection of all recycle materials for a destination point)
+  property (material) {
+    type (RecycleMaterial)
+    min (Optional) max (Many)
+  }
+}
