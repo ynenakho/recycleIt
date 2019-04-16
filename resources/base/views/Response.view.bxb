@@ -5,7 +5,7 @@ result-view {
 
   message {
     if (size(result) > 1) {
-      template ("Here are some recycling suggestions.")
+      template ("Here are some recycling suggestions")
     } else-if (size(result) == 0) {
       template ("No, you CANNOT recycle it!")
     }

@@ -3,7 +3,7 @@ result-view {
 
   message {
     if (size(recycling_points) > 1) {
-      template("I found some recycling locations for you.") 
+      template("I found some recycling locations") 
     } else {
       template () {
         speech ("#{value(recycling_points[0].name)}")
