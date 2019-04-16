@@ -1,8 +1,32 @@
 result-view {
-  match: DestinationList (this)
+  match{
+      DestinationList(destination_list)
+  }
 
   message {
-    template("#{raw(this.name)}")
+    template("#{raw(destination_list.name)}")
   }
   
+
+ 
+    render {
+    if (size(destination_list) > 0) {
+      list-of (destination_list) {
+        has-details (true)
+        where-each (item) {
+          layout-macro (store-list) {
+ 
+            param (destination_list) {
+              expression (item)
+            }
+          }
+        }
+      }
+    }
+    //  else-if (size(destination_list) == 1) {
+    //   layout-match (store-list) {
+    //     mode (Details)
+    //   }
+    // }
+  }
 }
