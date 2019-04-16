@@ -15,6 +15,41 @@ function GetAllMaterials () {
 function GetResultsFromApiSearch(material) {
   var queryObject = {
     api_key: value,
+    max_results: 5,
+    query: material.description
+  };
+  var queryString = http.makeQueryString(queryObject);
+  var response = http.getUrl(config.get('remote.earth.url') + "searchMaterials?" + queryString, { passAsJson: true });
+  console.debug("GetResultsFromApiSearch response = ",response);
+  var data = JSON.parse(response).result.map(resp => ({item: resp.description, exact: resp.exact, id: resp.material_id}));
+  console.debug("GetResultsFromApiSearch data =",data);
+  return data;
+}
+
+function GetLocation(materialId, sourcePoint) {
+  console.debug("MaterialId =", materialId);
+  console.debug("sourcePoint =", sourcePoint);
+
+  var queryObject = {
+    api_key: value,
+    latitude: sourcePoint.point.latitude,
+    longitude: sourcePoint.point.longitude,
+    max_distance: 5,
+    material_id: materialId
+  };
+  var queryString = http.makeQueryString(queryObject);
+  var response = http.getUrl(config.get('remote.earth.url') + "searchLocations?" + queryString, { passAsJson: true });
+  console.debug("GetLocation response = ",response);
+  // var data = JSON.parse(response).result.map(resp => ({locationName: resp.description, locationId: resp.location_id, longitude: resp.longitude, latitude: resp.latitude, distance: resp.distance}));
+  // console.debug("GetLocation data =", data);
+  var data = JSON.parse(response).result.map(resp => ({point : {longitude: resp.longitude, latitude: resp.latitude}}));
+  console.debug("GetLocation data =", data);
+  return data;
+}
+
+function GetResultsFromApiSearch(material) {
+  var queryObject = {
+    api_key: value,
     max_results: 10,
     query: material.description
   };
@@ -36,7 +71,9 @@ function LookForMatch(allMaterials, resToSearchIn, sourcePoint) {
         console.debug("HERE");
         var temp = allMaterials[i];
         temp.sourcePoint = sourcePoint;
-        result.push(temp); 
+        // temp.destinationLocations = GetLocation(allMaterials[i].id, sourcePoint);
+        temp.destinationPoint = GetLocation(allMaterials[i].id, sourcePoint);
+        result.push(temp);
       }
     }
   }
@@ -46,7 +83,7 @@ function LookForMatch(allMaterials, resToSearchIn, sourcePoint) {
 function checkMatch(material, allMaterials) {
   let words = material.description.toLowerCase().split(' ');
   for (let i = 0; i < words.length; i++) {
-    
+
     if (words[i] !== 'product' && allMaterials.find(obj => obj.item.toLowerCase().includes(words[i]) !== -1))
       return true;
   }
@@ -58,7 +95,7 @@ module.exports.function = function askIfRecyclable (material, sourcePoint) {
   var allMaterials = GetAllMaterials();
   let resFromMaterialSearch = [];
   var len = material.length;
-  
+
   for (let i = 0; i < len; i++) {
     if(((material[i].score > 0.5 && len < 3) || (material[i].score > 0.6)) && checkMatch(material[i], allMaterials))
       resFromMaterialSearch = resFromMaterialSearch.concat(GetResultsFromApiSearch(material[i]));
@@ -74,12 +111,15 @@ module.exports.function = function askIfRecyclable (material, sourcePoint) {
         return obj;
       });
       foundItemsArray = foundItemsArray.filter((material, index, self) => index === self.findIndex((t) => (t.item === material.item && t.info === material.info)));
+      console.debug("FINAL_ARRAY =", foundItemsArray);
+      // foundItemsArray = foundItemsArray.map(dest => dest.destinationLocations.filter((location, index, self) => index === self.findIndex(t => (t.locationId === location.locationId))));
+      // console.debug("FINAL_ARRAY2 =", foundItemsArray);
       return foundItemsArray;
     }
   }
 
   const recyclables = ['carton', 'paper', 'can', 'glass' ,'conditioner ','napkins', 'metal','steel','aluminum','cardboard', 'tin', 'glass', 'jar' , 'bottle', 'plastic'];
-  
+
   for (let i =0; i < material.length; i++) {
     var current = (material[i].description).toUpperCase();
     var currentScore = material[i].score;
