@@ -1,4 +1,8 @@
 structure (DestinationPoint) {
   description (Destination geo point location)
   role-of (viv.geo.NamedPoint)
+  property (locationId) {
+    type (viv.core.Text)
+    min (Required) max (One)
+  }
 }

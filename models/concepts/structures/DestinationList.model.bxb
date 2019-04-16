@@ -1,0 +1,7 @@
+structure (DestinationList) {
+  description (dest list structure)
+  property (name) {
+    type (viv.core.Text)
+    min (Optional) max (One)
+  }
+}

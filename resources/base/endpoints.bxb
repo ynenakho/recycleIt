@@ -18,5 +18,9 @@ endpoints {
       accepted-inputs (response)
       local-endpoint (FindDirections.js)
     }
+    action-endpoint (DestinationListAction) {
+      accepted-inputs (response)
+      local-endpoint ("DestinationList.js")
+    }
   }
 }

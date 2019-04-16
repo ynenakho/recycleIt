@@ -42,7 +42,7 @@ function GetLocation(materialId, sourcePoint) {
   console.debug("GetLocation response = ",response);
   // var data = JSON.parse(response).result.map(resp => ({locationName: resp.description, locationId: resp.location_id, longitude: resp.longitude, latitude: resp.latitude, distance: resp.distance}));
   // console.debug("GetLocation data =", data);
-  var data = JSON.parse(response).result.map(resp => ({point : {longitude: resp.longitude, latitude: resp.latitude}}));
+  var data = JSON.parse(response).result.map(resp => ({locationId: resp.location_id, point : {longitude: resp.longitude, latitude: resp.latitude}}));
   console.debug("GetLocation data =", data);
   return data;
 }

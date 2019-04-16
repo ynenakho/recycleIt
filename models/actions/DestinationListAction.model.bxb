@@ -1,0 +1,11 @@
+action (DestinationListAction) {
+  description (destination list)
+  type (Constructor)
+  collect {
+    input (response) {
+      type (Response)
+      min (Required) max (One)
+    }
+  }
+  output (DestinationList)
+}

@@ -36,6 +36,12 @@ layout {
               }
             }
           }
+          on-click {
+            intent {
+              goal: DestinationList
+              value: $expr(result)
+            }
+          }
           markers {
             marker {
               geo ("result.sourcePoint.point")

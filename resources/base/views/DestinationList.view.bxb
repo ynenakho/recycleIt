@@ -1,0 +1,8 @@
+result-view {
+  match: DestinationList (this)
+
+  message {
+    template("#{raw(this.name)}")
+  }
+  
+}
