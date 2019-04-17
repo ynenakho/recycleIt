@@ -14,9 +14,7 @@ action (SelectImage) {
           value: Image {
             url: viv.core.Url("https://5.imimg.com/data5/EO/QG/MY-35109483/corrugated-paper-box-250x250.png")
           }
-          value: Image {
-            url: viv.core.Url("https://cdnimg.webstaurantstore.com/images/products/large/23899/990464.jpg")
-          }
+
            value: Image {
             url: viv.core.Url("https://www.lg.com/au/images/it-monitors/md05608207/gallery/20_24M38H-medium01.jpg")
           }
@@ -29,9 +27,7 @@ action (SelectImage) {
           value: Image {
             url: viv.core.Url("https://img.staticbg.com/images/oaupload/banggood/images/12/78/9ffb00a5-f913-45d4-b1ee-9e6c08675fba.jpg")
           }
-          value: Image {
-            url: viv.core.Url("https://www.hughjordan.com/content/images/thumbs/0024267_12-pizza-box-box100.jpeg")
-          }
+
           
         }
       }
