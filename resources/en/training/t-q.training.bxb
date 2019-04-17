@@ -1,3 +1,8 @@
+train (t-qdxdxzw0db83a0fqzpgmxal7o) {
+  utterance ("[g:Response] Can you check if I can recycle (phone)[v:DescriptionConcept]?")
+  plan (bYxBCsIwEEV/a/UUgqDgsneQduNCkHqCOH4hGJKQiYK3NxZxlRk+/OE9BiusI43wxpf2ifIWR5v7iRqDV2JXowd9HO/TfJqrY/3FyWQmaxy2NTokFv539jVnpEqyMdvgh+CFMWNT8y7hmYTnYH3GEg1aLNCVhl9vymLOd9qSDvgA)
+  last-modified (1555471434954)
+}
 train (t-qrnleyps02b956w2pdi3fl0wc) {
   utterance ("[g:Response] i want to recycle (plastic)[v:DescriptionConcept] (phone)[v:DescriptionConcept] (case)[v:DescriptionConcept]")
   plan (xY7LCsIwEEVvfVf8BBei4LL/IBWkCzdduI/xFoKlCUlQ/HtjRFGIaxkGhnvODIMp5oZC8sSLKyzlTbZUvqjpjO4csUrRHf1LOChesUhJlavjLI7tjzMbd66aDyn5yV54WiVaLFO0tAz87axTzpZOWmW80l2pO0nj/+blyNBDHwMMMcIYk5DgK3tUFrNnz2IhUAQ/Dxu4Aw==)

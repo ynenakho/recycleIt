@@ -29,6 +29,10 @@ action (SelectImage) {
           value: Image {
             url: viv.core.Url("https://img.staticbg.com/images/oaupload/banggood/images/12/78/9ffb00a5-f913-45d4-b1ee-9e6c08675fba.jpg")
           }
+          value: Image {
+            url: viv.core.Url("https://www.hughjordan.com/content/images/thumbs/0024267_12-pizza-box-box100.jpeg")
+          }
+          
         }
       }
     }

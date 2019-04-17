@@ -49,13 +49,13 @@ result-view {
   }
   conversation-drivers{
     conversation-driver{
-      template ("Check photo from gallery")
+      template ("Gallery")
     }
     conversation-driver{
-      template ("Check from camera")
+      template ("Camera")
     }
     conversation-driver{
-      template ("Im done")
+      template ("I'm done")
     }
   }
 }

@@ -27,18 +27,18 @@ layout {
               markers {
                 marker {
                   geo (this.sourcePoint.point)
-                  icon ("icons/green-marker.png")
-                  width (15)
-                  height (20)
+                  icon ("icons/green-point.png")
+                  width (22)
+                  height (30)
                   anchor-x (5)
                   anchor-y (15)
                   rotation (0)
                 }
                 marker {
                   geo (this.destinationPoint.point)
-                  icon ("icons/red-marker.png")
-                  width (20)
-                  height (20)
+                  icon ("icons/red-point.png")
+                  width (22)
+                  height (30)
                   anchor-x (5)
                   anchor-y (15)
                   rotation (0)

@@ -21,4 +21,6 @@ vocab (peacedevs.recycleit.DescriptionConcept) {
   "beer botlle" 
   "liquor bottle" 
   "beer"
+  "food waste"
+  "phone"
 }

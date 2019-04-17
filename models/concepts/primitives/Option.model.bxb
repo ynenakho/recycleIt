@@ -1,3 +1,6 @@
 name (Option) {
   description (Should we launch gallery?)
+  features{
+    transient
+  }
 }

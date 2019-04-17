@@ -1,3 +1,8 @@
+train (t-ejepfcm3ljury1w33345aw9p2) {
+  utterance ("[g:Response] can i recycle (food waste)[v:DescriptionConcept]")
+  plan (bYxBCsIwEEV/a/UUgqDgsneQduNCkHqCOH4hGJKQiYK3NxZxlRk+/OE9BiusI43wxpf2ifIWR5v7iRqDV2JXowd9HO/TfJqrY/3FyWQmaxy2NTokFv539jVnpEqyMdvgh+CFMWNT8y7hmYTnYH3GEg1aLNCVhl9vymLOd9qSDvgA)
+  last-modified (1555467258726)
+}
 train (t-ekraehrwq5gwcg7kalqo6qyd5) {
   utterance ("[g:Response] can i recycle (toy helicopter)[v:DescriptionConcept]?")
   plan (Y2BlkClITUxOTUktK9YrSk2uTM5JzSzRC0otLsjPK05lUMYm61ic7ZkWBOYmJuWkYjfCN7EktSgzMYdBCZusc1EqUB6uRg2bGpfU4uSizIKSzPw85/y85NSCEgYWBkYGJgZmIM0AZTGCWSDABMRAcQA=)
