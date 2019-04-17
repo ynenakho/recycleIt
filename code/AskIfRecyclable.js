@@ -4,12 +4,13 @@ var config = require('config');
 var secret = require('secret');
 var value = secret.get('earthApiKey');
 var unsplashKey = secret.get('unsplashApiKey');
+var pixabayKey = secret.get('pixabayApiKey');
 
 function GetAllMaterials () {
   var response = http.getUrl(config.get('remote.earth.url') + "getMaterials?api_key=" + value, { passAsJson: true });
-  console.debug("GetAllMaterials response =",response);
+  // console.debug("GetAllMaterials response =",response);
   var data = JSON.parse(response).result.map(resp => ({item: resp.description, info: resp.long_description, id: resp.material_id}));
-  console.debug("GetAllMaterials data =",data);
+  // console.debug("GetAllMaterials data =",data);
   return data;
 }
 
@@ -21,15 +22,15 @@ function GetResultsFromApiSearch(material) {
   };
   var queryString = http.makeQueryString(queryObject);
   var response = http.getUrl(config.get('remote.earth.url') + "searchMaterials?" + queryString, { passAsJson: true });
-  console.debug("GetResultsFromApiSearch response = ",response);
+  // console.debug("GetResultsFromApiSearch response = ",response);
   var data = JSON.parse(response).result.map(resp => ({item: resp.description, exact: resp.exact, id: resp.material_id}));
-  console.debug("GetResultsFromApiSearch data =",data);
+  // console.debug("GetResultsFromApiSearch data =",data);
   return data;
 }
 
 function GetLocation(materialId, sourcePoint) {
-  console.debug("MaterialId =", materialId);
-  console.debug("sourcePoint =", sourcePoint);
+  // console.debug("MaterialId =", materialId);
+  // console.debug("sourcePoint =", sourcePoint);
 
   var queryObject = {
     api_key: value,
@@ -40,9 +41,9 @@ function GetLocation(materialId, sourcePoint) {
   };
   var queryString = http.makeQueryString(queryObject);
   var response = http.getUrl(config.get('remote.earth.url') + "searchLocations?" + queryString, { passAsJson: true });
-  console.debug("GetLocation response = ",response);
+  // console.debug("GetLocation response = ",response);
   var data = JSON.parse(response).result.map(resp => ({locationId: resp.location_id, point : {longitude: resp.longitude, latitude: resp.latitude}}));
-  console.debug("GetLocation data =", data);
+  // console.debug("GetLocation data =", data);
   return data;
 }
 
@@ -54,16 +55,16 @@ function GetResultsFromApiSearch(material) {
   };
   var queryString = http.makeQueryString(queryObject);
   var response = http.getUrl(config.get('remote.earth.url') + "searchMaterials?" + queryString, { passAsJson: true });
-  console.debug("GetResultsFromApiSearch response = ",response);
+  // console.debug("GetResultsFromApiSearch response = ",response);
   var data = JSON.parse(response).result.map(resp => ({item: resp.description, exact: resp.exact, id: resp.material_id}));
-  console.debug("GetResultsFromApiSearch data =",data);
+  // console.debug("GetResultsFromApiSearch data =",data);
   return data;
 }
 
 function LookForMatch(allMaterials, resToSearchIn, sourcePoint) {
   let result = [];
-  console.debug("resTosearchInId =", resToSearchIn[0].id);
-  console.debug("allMaterials[0].id =", allMaterials[0].id);
+  // console.debug("resTosearchInId =", resToSearchIn[0].id);
+  // console.debug("allMaterials[0].id =", allMaterials[0].id);
   for(let i = 0; i < allMaterials.length; i++) {
     for(let j = 0; j < resToSearchIn.length; j++) {
       if (allMaterials[i].id === resToSearchIn[j].id) {
@@ -91,23 +92,23 @@ function GetImageFromUnsplash(materialName) {
   var queryObject = {
     q: materialName,
     per_page: 3,
-    key: "12212691-8011cba36455e1a0830689c43"
+    key: pixabayKey
   };
   var queryString = http.makeQueryString(queryObject);
   
-  var res = http.getUrl("https://pixabay.com/api/?" + queryString , {passAsJson: true, cacheTime: 20000});
-  console.debug("!!!!!GetImageFromUnsplash response = ", res);
+  var res = http.getUrl(config.get('remote.pixabay.url') + queryString , {passAsJson: true, cacheTime: 20000});
+  // console.debug("!!!!!GetImageFromUnsplash response = ", res);
   let i = 0;
   if (materialName === "Cell Phones" || materialName === "Auto Parts")
     i = 1;
   var image = {url: JSON.parse(res).totalHits !== 0 ? JSON.parse(res).hits[i].webformatURL : "images/yes_recycle.png"};
-  console.debug("IMAGE=", image)
+  // console.debug("IMAGE=", image)
 
   return image;
 }
 
 module.exports.function = function askIfRecyclable (material, sourcePoint) {
-  console.debug("!!!!", material);
+  // console.debug("!!!!", material);
   var allMaterials = GetAllMaterials();
   let resFromMaterialSearch = [];
   var len = material.length;
@@ -117,11 +118,11 @@ module.exports.function = function askIfRecyclable (material, sourcePoint) {
       resFromMaterialSearch = resFromMaterialSearch.concat(GetResultsFromApiSearch(material[i]));
     }
   }
-  console.debug("resFromMaterialSearch =", resFromMaterialSearch);
-  console.debug("Length =", resFromMaterialSearch.length)
+  // console.debug("resFromMaterialSearch =", resFromMaterialSearch);
+  // console.debug("Length =", resFromMaterialSearch.length)
   if (resFromMaterialSearch.length > 0) {
     var foundItemsArray = LookForMatch(allMaterials, resFromMaterialSearch, sourcePoint);
-    console.debug("Found materials =", foundItemsArray);
+    // console.debug("Found materials =", foundItemsArray);
     // GetImageFromUnsplash("car");
     if (foundItemsArray.length > 0) {
       foundItemsArray = foundItemsArray.map(obj => {
@@ -129,8 +130,8 @@ module.exports.function = function askIfRecyclable (material, sourcePoint) {
         return obj;
       });
       foundItemsArray = foundItemsArray.filter((material, index, self) => index === self.findIndex((t) => (t.item === material.item)));
-      console.debug("BEFORE =", foundItemsArray);
-      console.debug("MATERIAL[0]=",material[0].image)
+      // console.debug("BEFORE =", foundItemsArray);
+      // console.debug("MATERIAL[0]=",material[0].image)
       foundItemsArray = foundItemsArray.map(obj => {
         obj.image = GetImageFromUnsplash(obj.item);
         if (material[0].image && material[0].image.url){
@@ -141,7 +142,7 @@ module.exports.function = function askIfRecyclable (material, sourcePoint) {
         // obj.cameraImage = {url: "https://micro-camera-server.herokuapp.com/uploads/snapshot.jpeg"};
         return obj;
       });
-      console.debug("FINAL_ARRAY =", foundItemsArray);
+      // console.debug("FINAL_ARRAY =", foundItemsArray);
       return foundItemsArray;
     }
   }
