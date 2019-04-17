@@ -4,12 +4,12 @@ train (t-ejepfcm3ljury1w33345aw9p2) {
   last-modified (1555467258726)
 }
 train (t-ekraehrwq5gwcg7kalqo6qyd5) {
-  utterance ("[g:Response] can i recycle (toy helicopter)[v:DescriptionConcept]?")
-  plan (Y2BlkClITUxOTUktK9YrSk2uTM5JzSzRC0otLsjPK05lUMYm61ic7ZkWBOYmJuWkYjfCN7EktSgzMYdBCZusc1EqUB6uRg2bGpfU4uSizIKSzPw85/y85NSCEgYWBkYGJgZmIM0AZTGCWSDABMRAcQA=)
-  last-modified (1555315319775)
+  utterance ("[g:Response ] can i recycle (toy)[v:DescriptionConcept] (helicopter)[v:DescriptionConcept]?")
+  plan (rYxNCsIwEIVfbf1ZeARBUHDZO0jduBCkniCOTwiGJCRR8PamXXSVpTMMvI/3MVhh46mED35iGyhfMdSp7Rm9s5HYl9pjfJ2f/Yjqblh+cVGJQSuDXantAnM/OYeSc2KUoH3SznbOCn36u7cteTf3DsKr0zZhiQoz1GgwxyITJm5yqkYG1nmHqfMNHn4=)
+  last-modified (1555476679796)
 }
 train (t-epwhx0hp7z47dzml8pfelk6sw) {
-  utterance ("[g:Response:continue] how about (metal scraps)[v:DescriptionConcept]?")
-  plan (Y2BlkClITUxOTUktK9YrSk2uTM5JzSzRC0otLsjPK05lUMYm61ic7ZkWBOYmJuWkYjfCN7EktSgzMYdBCZusc1EqUB6uRg2bGpfU4uSizIKSzPw85/y85NSCEgYWBkYGJgZmIM0AZTGCWSDABMRAcQA=)
-  last-modified (1555317478647)
+  utterance ("[g:Response:continue] how about (metal)[v:DescriptionConcept] (scraps)[v:DescriptionConcept]?")
+  plan (rYxNCsIwEIVfbf1ZeARBUHDZO0jduBCkniCOTwiGJCRR8PamXXSVpTMMvI/3MVhh46mED35iGyhfMdSp7Rm9s5HYl9pjfJ2f/Yjqblh+cVGJQSuDXantAnM/OYeSc2KUoH3SznbOCn36u7cteTf3DsKr0zZhiQoz1GgwxyITJm5yqkYG1nmHqfMNHn4=)
+  last-modified (1555473717370)
 }

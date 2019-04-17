@@ -1,10 +1,10 @@
 train (t-c267ll84cbg5e6xcd7mzrusp1) {
-  utterance ("[g:Response] is (kitchen)[v:DescriptionConcept] (oil)[v:DescriptionConcept] recyclable?")
-  plan (rY7LCgIxDEWvr1HBT3AhCi7nH2QEmYWbWbiv9QrFoS1NUfx7i+KgUHcSArk5hxBMMfdUmidepQzUd93SxLKheGeFWOXojvEtHAxvWOSkWprnrI7tjzMbudTnDyn7yV5FBqNaLHO0Cky8c9Y5Z0vRwfhonK2c1fTx794EPfQxwBAjFBinjK9NkRK6nqVCYniZDw==)
-  last-modified (1555137819778)
+  utterance ("[g:Response] is (kitchen oil)[v:DescriptionConcept] recyclable?")
+  plan (bYxBCsIwEEV/a/UUgqDgsneQduNCkHqCOH4hGJKQiYK3NxZxlRk+/OE9BiusI43wxpf2ifIWR5v7iRqDV2JXowd9HO/TfJqrY/3FyWQmaxy2NTokFv539jVnpEqyMdvgh+CFMWNT8y7hmYTnYH3GEg1aLNCVhl9vymLOd9qSDvgA)
+  last-modified (1555472661503)
 }
 train (t-cv48idxh1pbk4i544vs7ws7sd) {
   utterance ("[g:Response] can i recycle (paper bag)[v:DescriptionConcept] ")
-  plan (dY69CgIxEITn/H0JC1GwvHeQO5ArbK6wj3GEYEhCNii+vfFEuSIWCzP7fSyLJVaBSvPCu9SR+qktTap7SvBOiG2JHpi+wsnwgXVJ6qQfsjrbP2f2cuuuI6n4yVElRqMsNiXaRGb+c3Ylp6XoaEIy3jXeaYaEBSpMMMUM85wxatXQPoO8xZu/AA==)
-  last-modified (1555279859941)
+  plan (bYxBCsIwEEV/a/UUgqDgsneQduNCkHqCOH4hGJKQiYK3NxZxlRk+/OE9BiusI43wxpf2ifIWR5v7iRqDV2JXowd9HO/TfJqrY/3FyWQmaxy2NTokFv539jVnpEqyMdvgh+CFMWNT8y7hmYTnYH3GEg1aLNCVhl9vymLOd9qSDvgA)
+  last-modified (1555472257374)
 }
