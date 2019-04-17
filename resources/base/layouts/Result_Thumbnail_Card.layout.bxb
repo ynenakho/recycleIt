@@ -5,24 +5,39 @@ layout-macro-def (result-thumbnail-card) {
       min (Required) max (One)
     }
   }
+  
   content {
-    thumbnail-card {
-      title-area {
-        halign (Start)
-        slot1 {
-          text {
-            style (Title_XS)
-            value ("#{value(result.item)}")
+    section {
+      content {
+        compound-card {
+          content  {
+            thumbnail-card {
+              title-area {
+                halign (Start)
+                slot1 {
+                  text {
+                    style (Title_XS)
+                    value ("#{value(result.item)}")
+                  }
+                }
+                slot2 {
+                  paragraph ("#{value(result.info)}") {
+                    style (Detail_M_Soft)
+                  }
+                }
+              }
+              image-url ("#{value(result.image.url)}")
+              image-position (End)
+            }
           }
-        }
-        slot2 {
-          paragraph ("#{value(result.info)}") {
-            style (Detail_M_Soft)
-          }
+          on-click {
+            intent{
+              goal: Response
+              value: $expr(result)
+            } 
+          }   
         }
       }
-      image-url ("#{value(result.image.url)}")
-      image-position (End)
     }
   }
 }

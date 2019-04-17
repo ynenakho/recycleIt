@@ -13,12 +13,18 @@ result-view {
 
   render {
     if (size(result) > 1) {
-      list-of (result) {
-        has-details (true)
-        where-each (item) {
-          layout-macro (result-thumbnail-card) {
-            param (result) {
-              expression (item)
+      layout {
+        layout-macro (picture-macro) {
+          param (result) {
+            expression (result.cameraImage)
+          }
+        }
+        for-each (result) {
+          as (item) {    
+            layout-macro (result-thumbnail-card) {
+              param (result) {
+                expression (item)
+              }
             }
           }
         }

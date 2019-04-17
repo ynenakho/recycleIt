@@ -1,0 +1,6 @@
+structure (CameraImage) {
+  role-of (viv.core.BaseImage)
+  features{
+    transient
+  }
+}

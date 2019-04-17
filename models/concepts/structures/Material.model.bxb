@@ -8,6 +8,10 @@ structure (Material) {
     type (ScoreConcept)
     min (Optional)
   }
+  property (image) {
+    type (Image)
+    min (Optional)
+  }
   features{
     transient
   }

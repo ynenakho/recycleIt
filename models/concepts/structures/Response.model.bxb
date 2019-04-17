@@ -12,6 +12,10 @@ structure (Response) {
     type (Image)
     min (Required) max (One)
   }
+  property (cameraImage) {
+    type (CameraImage)
+    min (Required) max (One)
+  }
   property (id) {
     type (Id)
     min (Required) max (One)

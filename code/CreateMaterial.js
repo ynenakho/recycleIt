@@ -50,8 +50,8 @@ function GetMaterialFromImage(image) {
     return [{description: "unknown object", score: 1}];
   console.debug("RESPONSE",response);
   console.debug("RESPONSE PARSED",JSON.parse(response));
-  var data = JSON.parse(response).responses[0].labelAnnotations.map(resp => ({description: resp.description, score: resp.score}));
-  console.debug("DATA",data);
+  var data = JSON.parse(response).responses[0].labelAnnotations.map(resp => ({description: resp.description, score: resp.score, image: image}));
+  console.debug("DATA===",data);
   return data;
 }
 
@@ -59,13 +59,15 @@ module.exports.function = function createMaterial (description,image) {
   var answer = [];
   
   if (image) {
+    
     answer = GetMaterialFromImage(image);
   } else if (description) {
     for (let i = 0; i < description.length; i++) {
       var material = {
        description: description[i],
-       score: 1
-      }
+       score: 2,
+       image: ""
+     }
       answer.push(material);
     }  
   }

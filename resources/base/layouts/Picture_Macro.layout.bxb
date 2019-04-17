@@ -1,0 +1,18 @@
+layout-macro-def (picture-macro) {
+  params {
+    param (result) {
+      type (CameraImage)
+      min (Optional) max (One)
+    }
+  }
+  
+  content {
+    section {
+      content {
+        image {
+          url ("#{value(result.url)}")
+        } 
+      }
+    }
+  }
+}

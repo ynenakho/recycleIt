@@ -2,6 +2,8 @@ layout {
   match: Response (result)
   mode (Details)
 
+  
+  
  content {
     section {
       content {

@@ -67,7 +67,6 @@ function LookForMatch(allMaterials, resToSearchIn, sourcePoint) {
   for(let i = 0; i < allMaterials.length; i++) {
     for(let j = 0; j < resToSearchIn.length; j++) {
       if (allMaterials[i].id === resToSearchIn[j].id) {
-        console.debug("HERE");
         var temp = allMaterials[i];
         temp.sourcePoint = sourcePoint;
         temp.destinationPoint = GetLocation(allMaterials[i].id, sourcePoint);
@@ -95,17 +94,20 @@ function GetImageFromUnsplash(materialName) {
     key: "12212691-8011cba36455e1a0830689c43"
   };
   var queryString = http.makeQueryString(queryObject);
-
+  
   var res = http.getUrl("https://pixabay.com/api/?" + queryString , {passAsJson: true, cacheTime: 20000});
   console.debug("!!!!!GetImageFromUnsplash response = ", res);
-  var image = {url: JSON.parse(res).totalHits !== 0 ? JSON.parse(res).hits[0].webformatURL : "images/yes_recycle.png"};
+  let i = 0;
+  if (materialName === "Cell Phones" || materialName === "Auto Parts")
+    i = 1;
+  var image = {url: JSON.parse(res).totalHits !== 0 ? JSON.parse(res).hits[i].webformatURL : "images/yes_recycle.png"};
   console.debug("IMAGE=", image)
 
   return image;
 }
 
 module.exports.function = function askIfRecyclable (material, sourcePoint) {
-  console.debug(material);
+  console.debug("!!!!", material);
   var allMaterials = GetAllMaterials();
   let resFromMaterialSearch = [];
   var len = material.length;
@@ -128,8 +130,15 @@ module.exports.function = function askIfRecyclable (material, sourcePoint) {
       });
       foundItemsArray = foundItemsArray.filter((material, index, self) => index === self.findIndex((t) => (t.item === material.item)));
       console.debug("BEFORE =", foundItemsArray);
+      console.debug("MATERIAL[0]=",material[0].image)
       foundItemsArray = foundItemsArray.map(obj => {
         obj.image = GetImageFromUnsplash(obj.item);
+        if (material[0].image && material[0].image.url){
+          obj.cameraImage = material[0].image;
+        }
+        else
+          obj.cameraImage = material[0].score !== 2 ? {url: "https://micro-camera-server.herokuapp.com/uploads/snapshot.jpeg?" + Math.ceil(Math.random() * 1000).toString() } : "";
+        // obj.cameraImage = {url: "https://micro-camera-server.herokuapp.com/uploads/snapshot.jpeg"};
         return obj;
       });
       console.debug("FINAL_ARRAY =", foundItemsArray);

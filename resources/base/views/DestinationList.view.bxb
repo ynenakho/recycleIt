@@ -24,7 +24,7 @@ result-view {
         }
       }
     }
-     else-if (size(recycling_points) == 1) {
+    else-if (size(recycling_points) == 1) {
       layout-match (recycling_points) {
         mode (Details)
       }

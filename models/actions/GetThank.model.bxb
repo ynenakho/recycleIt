@@ -1,7 +1,5 @@
 action (GetThank) {
   description (thank you)
   type(Constructor)
-
-  output (Thank) {         
-  }
+  output (Thank)
 }
